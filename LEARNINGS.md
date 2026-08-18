@@ -31,6 +31,12 @@ One prompt each produced full turnaround sheets (front/side/back + portrait + pa
 - **Lesson:** 503s on this API are transient — retry before changing anything.
 - **Lesson:** lock outfit colors in the sheet prompt; reuse the exact outfit words in every shot prompt.
 
+### Entry 9 — PS2 low-poly style test: GOOD — director's favorite
+5s PS2-era low-poly test (foggy draw distance, muted gray-brown grade, flat textures, follow-from-behind camera) — director: "infinitely better, I love that one." Strong nostalgic pull confirmed.
+- **Lesson:** PS2/early-3D game aesthetic is a top-tier nostalgia anchor for this audience. Prompt keys that worked: "early 2000s PS2 era video game graphics, GTA style low poly 3D, flat muddy textures, jagged aliased edges, muted gray-brown color grading, foggy draw distance, RenderWare aesthetic."
+- **Defect noted by director:** character read as a grown man, not a child. Cause: no character reference attached (anime sheet is the wrong medium) and "boy" is weak in prompts.
+- **Lesson:** for 3D/low-poly styles, generate a DEDICATED character sheet in that style, and prompt child proportions explicitly ("young boy, child proportions, oversized head, short stature"). Reusing a 2D anime sheet for 3D styles is untested and likely counterproductive.
+
 ### Entry 8 — Shot 1 v2 verdict: REJECTED (too generic) — 20 credits
 The 9:16/5s dinner shot (suffix: "1990s retro anime style, cel shaded animation, film grain, vintage anime aesthetic") came back clean, polished, modern-looking. Director rejected it: "everyone does this, it's too bullshit, make it more unique."
 - **Lesson:** mild retro suffixes ("1990s retro anime style, film grain") are not strong enough — the model drifts to its polished default, especially in dark interior scenes. Retro must be pushed HARD and concretely: "1980s hand-painted anime, thick hand-inked outlines, muted faded color palette, heavy film grain, dust and scratches, slight VHS softness, hand-painted background art, on-twos animation feel."
