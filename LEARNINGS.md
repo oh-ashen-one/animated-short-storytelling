@@ -31,6 +31,11 @@ One prompt each produced full turnaround sheets (front/side/back + portrait + pa
 - **Lesson:** 503s on this API are transient — retry before changing anything.
 - **Lesson:** lock outfit colors in the sheet prompt; reuse the exact outfit words in every shot prompt.
 
+### Entry 10 — VHS 80s style test: BAD (for our purposes) — 20 credits
+Requested 1980s VHS cartoon with scan lines/tape artifacts/tracking distortion. Result: clean, bright, modern-looking cheerful kids' cartoon; analog artifacts didn't materialize; tone far too cheerful for a melancholic film.
+- **Lesson:** analog artifact keywords ("scan lines", "tracking distortion", "VHS softness") are unreliable on MiniMax H3 — the model may ignore texture instructions that fight its clean default. Don't build a film's identity on artifacts the model won't reliably produce.
+- **Lesson:** mood words in the scene description ("sunny", "cheerful" scenarios) can overpower the style intent. Keep scene mood aligned with the film's tone even in throwaway tests — style AND tone are both being tested.
+
 ### Entry 9 — PS2 low-poly style test: GOOD — director's favorite
 5s PS2-era low-poly test (foggy draw distance, muted gray-brown grade, flat textures, follow-from-behind camera) — director: "infinitely better, I love that one." Strong nostalgic pull confirmed.
 - **Lesson:** PS2/early-3D game aesthetic is a top-tier nostalgia anchor for this audience. Prompt keys that worked: "early 2000s PS2 era video game graphics, GTA style low poly 3D, flat muddy textures, jagged aliased edges, muted gray-brown color grading, foggy draw distance, RenderWare aesthetic."
