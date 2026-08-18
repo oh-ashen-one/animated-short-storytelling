@@ -31,6 +31,12 @@ One prompt each produced full turnaround sheets (front/side/back + portrait + pa
 - **Lesson:** 503s on this API are transient — retry before changing anything.
 - **Lesson:** lock outfit colors in the sheet prompt; reuse the exact outfit words in every shot prompt.
 
+### Entry 6 — Aspect ratio & pacing pivot — 40 credits wasted — BAD (process miss)
+Shot 1 was generated at 16:9/10s per the original plan, then the director revealed the target is vertical (9:16) and that 10s feels way too long under VO. The 16:9 take is unusable for the final cut.
+- **Lesson:** confirm the DELIVERY PLATFORM (vertical vs horizontal) in Phase 1, before any generation. Aspect ratio is a day-one decision.
+- **Lesson (VO pacing):** one spoken line ≈ 5–6 seconds. A 10s shot forces padding or dead air. For VO-driven shorts, default shot duration ≈ 5–6s per narration line; write the VO lines first, then size shots to them. More, shorter shots also cut cheaper (per-second pricing is linear).
+- **Lesson:** a 16:9 character sheet still works fine as an `--image` reference for 9:16 generations — it's a reference, not a frame.
+
 ### Entry 5 — Ops notes, Higgsfield CLI
 - `higgsfield workspace set <id>` is required before `generate cost`/`generate create` — error message says so, but it's easy to hit first.
 - Failed jobs are not charged (verified: balance unchanged after 3 failed jobs).

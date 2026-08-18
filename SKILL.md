@@ -24,9 +24,9 @@ A production workflow for making coherent animated shorts from text-to-video mod
 
 ### Phase 1 — Concept & constraints
 
-- Nail the logline (one sentence), target runtime, and aspect ratio.
+- Nail the logline (one sentence), target runtime, and aspect ratio. **Aspect ratio is a day-one decision** — confirm the delivery platform (vertical 9:16 for social vs horizontal 16:9) before ANY generation; a wrong-aspect take is a wasted take.
 - Runtime math: clips have a max duration (e.g. 15s). A 60s film at 10s/shot = 6 shots. Shorter runtimes force better films — cut filler beats, not retake budget.
-- Dialogue-driven or VO-driven? For VO-driven films, generated audio is irrelevant — never spend effort on it; the VO + music go on in the edit.
+- Dialogue-driven or VO-driven? For VO-driven films, generated audio is irrelevant — never spend effort on it; the VO + music go on in the edit. **Write the VO lines first and size shots to them: one spoken line ≈ 5–6s, so default to 5–6s shots.** Longer shots under a single line create dead air.
 
 ### Phase 2 — Style anchors (cheap tests before real spend)
 
