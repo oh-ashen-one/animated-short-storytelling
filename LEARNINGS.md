@@ -31,6 +31,10 @@ One prompt each produced full turnaround sheets (front/side/back + portrait + pa
 - **Lesson:** 503s on this API are transient — retry before changing anything.
 - **Lesson:** lock outfit colors in the sheet prompt; reuse the exact outfit words in every shot prompt.
 
+### Entry 7 — Director note: nostalgia is the quality lever
+Creative direction from the director: nostalgia automatically raises perceived quality. Any style/framing/texture with nostalgic pull (90s cel, PS2 low-poly, VHS artifacts, film grain) beats a prettier-but-generic look. Ghibli-painterly specifically called out as overdone and NOT nostalgic — deprioritized despite testing prettiest.
+- **Lesson:** when choosing between style anchors, weigh nostalgic resonance as a first-class criterion, not just image quality. "Pretty" loses to "feels like childhood."
+
 ### Entry 6 — Aspect ratio & pacing pivot — 40 credits wasted — BAD (process miss)
 Shot 1 was generated at 16:9/10s per the original plan, then the director revealed the target is vertical (9:16) and that 10s feels way too long under VO. The 16:9 take is unusable for the final cut.
 - **Lesson:** confirm the DELIVERY PLATFORM (vertical vs horizontal) in Phase 1, before any generation. Aspect ratio is a day-one decision.

@@ -32,6 +32,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 
 - Generate 2–4 short test clips (5s is enough) of the SAME simple scene in candidate styles. One scene, one variable (style), fair comparison.
 - Watch them. Pick ONE anchor. Kill the rest. A style that "blends" two anchors usually differentiates poorly — prefer a single strong identity.
+- **Nostalgia is a first-class selection criterion.** Between two working styles, pick the one with nostalgic pull (retro cel, VHS, low-poly game graphics, film grain) over the one that's merely pretty. Note: Ghibli-painterly tests beautiful but is overused and reads generic, not nostalgic — avoid as a default.
 - Write the winning style as a **style suffix** — a fixed string appended verbatim to every shot prompt. Example that tested well:
   `1990s retro anime style, cel shaded animation, film grain, vintage anime aesthetic`
 
