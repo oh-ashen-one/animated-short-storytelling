@@ -31,6 +31,12 @@ One prompt each produced full turnaround sheets (front/side/back + portrait + pa
 - **Lesson:** 503s on this API are transient — retry before changing anything.
 - **Lesson:** lock outfit colors in the sheet prompt; reuse the exact outfit words in every shot prompt.
 
+### Entry 8 — Shot 1 v2 verdict: REJECTED (too generic) — 20 credits
+The 9:16/5s dinner shot (suffix: "1990s retro anime style, cel shaded animation, film grain, vintage anime aesthetic") came back clean, polished, modern-looking. Director rejected it: "everyone does this, it's too bullshit, make it more unique."
+- **Lesson:** mild retro suffixes ("1990s retro anime style, film grain") are not strong enough — the model drifts to its polished default, especially in dark interior scenes. Retro must be pushed HARD and concretely: "1980s hand-painted anime, thick hand-inked outlines, muted faded color palette, heavy film grain, dust and scratches, slight VHS softness, hand-painted background art, on-twos animation feel."
+- **Lesson:** style intensity ≠ style keywords. Texture-level instructions (ink, dust, frame rate) beat era labels.
+- Also fixed in v3 prompt: parents specified as "a mother and father" (model kept improvising two women).
+
 ### Entry 7 — Director note: nostalgia is the quality lever
 Creative direction from the director: nostalgia automatically raises perceived quality. Any style/framing/texture with nostalgic pull (90s cel, PS2 low-poly, VHS artifacts, film grain) beats a prettier-but-generic look. Ghibli-painterly specifically called out as overdone and NOT nostalgic — deprioritized despite testing prettiest.
 - **Lesson:** when choosing between style anchors, weigh nostalgic resonance as a first-class criterion, not just image quality. "Pretty" loses to "feels like childhood."
