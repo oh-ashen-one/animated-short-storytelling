@@ -8,6 +8,12 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
 
+### Entry 29 — Slot Machine wrap: artifact-tolerance precedent + Ep2 breakdown shipped — no spend
+Post-production close-out of Episode 2 (same day as Entry 28).
+- **Lesson (artifact tolerance):** shot 11 carried a minor head-duplicate artifact (~2s of a 5s clip) on an otherwise perfect take 1. Per the max-3-takes rule it was kept and flagged in the report; the director watched the actual file and approved it as-is. Precedent: a short, non-narrative-breaking artifact on a strong take is acceptable — offer one priced retake (20cr) and let the director decide after watching, don't burn retakes preemptively.
+- **Lesson (Phase 8 repeats cleanly):** the Ep2 public breakdown page was built with the exact Phase 8 recipe from Ep1 — verbatim prompts via `generate get --json`, jobs matched to `shot-NN.mp4` by byte size, all 12 videos + rough cut embedded from public CDN/upload URLs. Zero new friction; the recipe is confirmed reusable per episode. Still true: Notion MCP cannot publish — Share → Publish is the director's manual click.
+- **State:** two films now exist in the series ("Log Out" 668cr, "Slot Machine" 240cr). Both rough cuts are 62.000s, audio stripped, awaiting director-recorded VO. Balance after Ep2: 736.2cr.
+
 ### Entry 28 — PRODUCTION: Episode 2 "Slot Machine" complete — 240cr net, 12/12 keepers, zero taste rejections
 First fully unattended goal-mode production. 13 jobs fired, 12 keepers accepted, 1 server-side failure (shot 2, take 1). Ledger (`account transactions`): 256 spent − 16 refunded = **240cr net** vs 668cr for Ep1. Every keeper was accepted on its first WATCHED take — the cinematic-craft prompt anatomy (Entry 27) held across all 12 shots, including all three screen-within-screen hard shots (2, 6, 9).
 - **Lesson (screen-within-screen is SOLVED on H3):** "The phone screen clearly shows [explicit content]" + locked-off or single-drift camera rendered legible spinning reels, three-cherry jackpots, clock-coins dropping into a coin slot, and reel symbols of the kid's own life — all first take. The Entry 26 watch item is closed.

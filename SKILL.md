@@ -60,6 +60,7 @@ For each shot, write: number, timecode, story beat, one-sentence action, camera 
 - **Screen-within-screen works on H3** (verified 3/3 first-take in Ep2): write the screen's content explicitly ("the phone screen clearly shows three spinning slot machine reels") and keep the camera to one slow move.
 - Failed jobs may show a partial charge followed by a refund minutes later — tally net from the ledger at close, never mid-run balances.
 - Regenerate weak shots immediately — that's what the buffer is for. Don't "fix it in the edit."
+- **Artifact tolerance:** a short (~2s), non-narrative-breaking artifact on an otherwise strong take is keepable. Cap retakes per shot (3 max), keep the best, flag it, and offer the director one priced retake after they watch the file — don't burn budget chasing perfection unprompted.
 - Download and keep every keeper with a strict naming scheme: `shot-01.mp4`, `shot-02.mp4`, ...
 
 ### Phase 7 — Packaging for social (from a 40-reel teardown of a top AI-satire account)
