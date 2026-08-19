@@ -8,6 +8,12 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 Film concept: kids-and-phones commentary, voiceover-driven, no character dialogue. Style anchor: **early-2000s PS2 low-poly 3D** (locked after style trials — see entries 9–11). Character: young boy, yellow t-shirt / blue shorts / white sneakers; the 2D anime turnaround sheet was abandoned with the anime direction — a dedicated in-style 3D sheet is required.
 
+### Entry 15 — Shots 4 & 5, PS2 style with sheet, MiniMax H3, 2× 5s @ 9:16 2K, 40 credits — GOOD (pending director)
+- Shot 4 (hallway): kid walks toward camera between locker rows; every background kid head-down on a glowing phone, faces blue-lit. On-model, composition exactly as prompted.
+- Shot 5 (cafeteria): near-table kid alone on his phone, rows of kids at far tables all on phones. Prompt asked for "one long table, group at far end" — model split into separate cafeteria tables. Beat still reads ("together but alone"), so accepted.
+- **Lesson:** group-table blocking ("at the other end of HIS table") is unreliable; the model prefers its own cafeteria layout. If exact spatial blocking matters, say it twice or use a keyframe.
+- **Observation:** with the sheet attached, background kids also inherit the yellow-tee look occasionally (shot 4 has a yellow-shirt background kid) — the sheet bleeds onto extras. Harmless at fog distance, but for crowd shots consider "other kids in varied colored shirts" in the prompt.
+
 ### Entry 14 — Shots 1 & 3, PS2 style with sheet as `--image`, MiniMax H3, 2× 5s @ 9:16 2K, 40 credits — MIXED
 Sheet-as-reference pipeline works: the kid stayed on-model (yellow tee, proportions) in both.
 - Shot 3 (bedroom, blue glow on face, moonlit window): STRONG. Reads as a child, mood lands, on-model. Candidate keeper.
