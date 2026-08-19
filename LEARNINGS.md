@@ -8,6 +8,12 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
 
+### Entry 24 — Distribution teardown: top AI-satire reels account (40 reels, 1 week) — Apify scrape
+Scraped a leading AI-satire reels account via Apify `instagram-reel-scraper` to reverse-engineer the packaging. Findings folded into SKILL.md Phase 7. Key data: median 104k views, ~5.3% like rate, 6-7 posts/day, ≥50s reels overperform (135k vs 88k median), frame-1 premise cards, fragment-per-shot captions (median 18 chars), ~34 cuts/min, zero hashtags/CTAs, serialized lore + end-card.
+- **Validation:** his single most on-brand reel for us ("nostalgia larp") is literally PS2 low-poly 3D — a kid staring at a tablet in a chunky-polygon living room. The "Log Out" aesthetic is proven on this exact audience.
+- **Lesson:** study the distribution layer as rigorously as the production layer. A 40-reel scrape via Apify costs almost nothing and replaces vibes with numbers.
+- **Lesson (Apify):** use `instagram-reel-scraper` with `{"username":[...],"resultsLimit":40}`; sync endpoint works with a multi-minute curl timeout.
+
 ### Entry 23 — Higgsfield audio models discovered — probe costs only
 The CLI has a full audio category: `sonilo_music` (text-to-music, **3.75cr for 60s**, 4.07cr for 65s — dirt cheap), `mirelo_text_to_audio` (SFX/ambience, 2.5cr per 10s), plus three TTS models (irrelevant when the director records his own VO). No Suno API path exists, but sonilo_music is a scriptable in-pipeline alternative at trivial cost.
 - **Lesson:** `higgsfield model list` shows the whole catalog (3D, audio, image, video, data) — check it before assuming a capability gap. A/B sonilo vs Suno for ambient beds; use mirelo for ambience layers (playground, room tone, city hum) under VO.

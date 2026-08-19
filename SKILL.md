@@ -59,6 +59,17 @@ For each shot, write: number, timecode, story beat, one-sentence action, camera 
 - Regenerate weak shots immediately — that's what the buffer is for. Don't "fix it in the edit."
 - Download and keep every keeper with a strict naming scheme: `shot-01.mp4`, `shot-02.mp4`, ...
 
+### Phase 7 — Packaging for social (from a 40-reel teardown of a top AI-satire account)
+
+The film isn't done when it's assembled — package it for the feed:
+- **Frame-1 premise card:** state the entire premise as huge centered white text at 0:00 ("how kids experience 8pm now"). No cold open. Instant comprehension = no swipe.
+- **Fragment-per-shot captions:** 2–5 words per shot, synced to the VO. The reel must work muted — the text IS the narration for muted viewers.
+- **Cut rhythm:** top accounts cut every ~1.7s. For melancholy films hold shots longer (2.5–5s) but keep the TEXT changing within the shot.
+- **Escalation arc:** ordinary → progressively surreal. Even a sad film escalates.
+- **Deadpan tonal contrast:** let the sadness sit under flat narration. Never wink.
+- **Longer reels overperform** for this format (≥50s beats <50s). 60s is a feature, not a risk.
+- **Recurring signature:** one recurring element per film (a sound motif, an object, a card) — serialized universes reward follows. No hashtags, no CTAs in the caption.
+
 ### Phase 6 — Assemble
 
 - Concatenate in an editor (or ffmpeg), lay VO and music, color/level pass, done.
