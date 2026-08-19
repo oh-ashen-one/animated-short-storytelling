@@ -6,6 +6,14 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ## 2026-08-19 — PIPELINE MIGRATION: H3 video moved to MiniMax direct API
 
+### Entry 31 — Style exploration round 2 + two director rules — $4.50 test spend
+Style tests for Ep3 ("Boiling Point", AI-water episode), all 4-5s @ 2K via direct API.
+- **Verdicts (director):** anime styles with humans read as AI slop — 90s OVA and watercolor kid shots both rejected. But the OVA/watercolor ATMOSPHERE shots (night car wash, golf course) were "fire" — H3 carries painterly environments, not anime faces.
+- **Retro-game family: all four approved.** PS1 (dither/jitter), N64 (blur/fog), PS3/GTA-IV (brown-gray, harsh bloom, plasticky sheen), prerendered-survival-horror. Prerender slightly meh (blocky head). **Ep3 style = PS3.**
+- **Rule (casting):** EVERY human in any generation is modeled after a recognizable famous figure — movie/TV/anime/game/historical — anything that stops the scroll. One anchor per episode (Ep3: Hank Hill; future: Batman). Folded into SKILL.md golden rules.
+- **Rule (format):** when presenting a script, show the SCENES with the actual generation prompts; the director records his own VO — suggested lines go BELOW the scenes, clearly marked as suggestions.
+- **Lesson (H3 vs anime faces):** human faces in anime styles are the slop tell; humans work great in low-poly 3D styles (the series' PS2 kid never read as slop). Keep humans in the retro-game family; painterly styles are for environment-only shots.
+
 ### Entry 30 — Direct-API migration: verified end-to-end, ~35% cheaper — $0.96 test spend
 Higgsfield bills H3 at 4cr/sec (~$0.19–0.20/sec effective). MiniMax's own pay-as-you-go API bills **$0.13/sec at 2K / $0.08/sec at 768P**, so a 12×5s episode is ~$7.80 vs ~$11.40. Migrated video generation to the direct API; Higgsfield CLI stays for image models (Nano Banana 2 sheets) and ad-hoc hosting.
 - **Verified on live tasks:** text-to-video (4s/768P/9:16, ~100s wall clock), reference-image generation with the PS2 char sheet (kid stayed on-model: yellow tee, blue shorts, proportions), and the `h3.sh` wrapper (submit → poll → download) round-trip. 3 test tasks, $0.96 total.

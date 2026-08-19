@@ -17,6 +17,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 1. **Never generate without explicit director confirmation.** Quote the cost first, wait for a green light. (Director rule, 2026-08-19.) Style/vibe tests are ALWAYS the minimum duration — 4s on the direct API — never longer.
 1. **Never raw-dog text-to-video for a multi-shot film.** Character and style will drift between clips. Always anchor with a character sheet and a locked style suffix (see below).
 2. **Plan the budget before generating.** Video models charge per second. Do the math first, keep a retake buffer, and test cheap before committing.
+3. **Every on-screen human is cast as a recognizable famous figure** (movie, TV, anime, game, historical — anything that stops the scroll). One anchor per episode (e.g. Hank Hill, Batman), named explicitly in the char-sheet prompt and every character shot. Supporting faces get their own sheet or stay silhouettes.
 3. **One narration/story beat per shot.** If a shot carries two beats, split it or simplify it.
 4. **Simple camera moves.** Static, slow push-in, slow pull-back, gentle drift. Fast/zooming moves are where face-morphing and ghosting artifacts live.
 5. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
