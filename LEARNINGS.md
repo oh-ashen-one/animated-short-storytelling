@@ -8,9 +8,16 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 Film concept: kids-and-phones commentary, voiceover-driven, no character dialogue. Style anchor: **early-2000s PS2 low-poly 3D** (locked after style trials — see entries 9–11). Character: young boy, yellow t-shirt / blue shorts / white sneakers; the 2D anime turnaround sheet was abandoned with the anime direction — a dedicated in-style 3D sheet is required.
 
+### Entry 19 — Shots 6–12 complete + rough cut assembled — batch total 140 credits — GOOD
+All 12 shots of "Log Out" banked (12× 5s @ 9:16 2K). Standouts: boardroom with literally faceless suits + kids-on-screens wall + rising chart (shot 8); infinite feed wall (9); city of blue windows (11); foggy playground silhouette closer (12). Shot 7's one-lit-floor tower and shot 10's golden-hour swing both landed first try after retry.
+- **Assembly:** `ffmpeg -f concat -c copy -an` across the 12 clips produced exactly 62.000s — no re-encode needed when all clips come from the same model at the same params. `-an` because the film is VO-driven; generated audio is stripped, never evaluated.
+- **Lesson:** when every clip shares model/resolution/codec, the concat demuxer with stream copy is the assembly path — instant, lossless, frame-exact.
+- **Lesson:** 12× 5s beats landed at the 62s target with zero trimming — sizing shots to VO lines (5–6s) at the script stage works.
+
 ### Entry 18 — Concurrency limit discovered, MiniMax H3 — no cost
 Firing 7 parallel jobs: 2 rejected immediately with `rate_limit_reached` — `concurrent_jobs_limit: 4` per job set on the Ultimate plan (private workspace). Rejected jobs are NOT charged.
 - **Lesson:** max 4 parallel `minimax_h3` generations. Batch in waves of 4; queue the rest and fire as slots free. Applies per model job-set, not account-wide.
+- **Lesson:** slot release lags job completion — a retry fired immediately after a completion notification can still bounce with `rate_limit_reached`. Refill only on the NEXT completion (or add a short delay), never assume a just-finished job freed its slot instantly.
 
 ### Entry 17 — Full-batch generation of remaining shots, MiniMax H3, 7× 5s @ 9:16 2K, 140 credits — fired
 Director approved shots 1–5 ("these look sick") and ordered the rest in one batch. Production decisions:
