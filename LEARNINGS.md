@@ -8,6 +8,10 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
 
+### Entry 23 — Higgsfield audio models discovered — probe costs only
+The CLI has a full audio category: `sonilo_music` (text-to-music, **3.75cr for 60s**, 4.07cr for 65s — dirt cheap), `mirelo_text_to_audio` (SFX/ambience, 2.5cr per 10s), plus three TTS models (irrelevant when the director records his own VO). No Suno API path exists, but sonilo_music is a scriptable in-pipeline alternative at trivial cost.
+- **Lesson:** `higgsfield model list` shows the whole catalog (3D, audio, image, video, data) — check it before assuming a capability gap. A/B sonilo vs Suno for ambient beds; use mirelo for ambience layers (playground, room tone, city hum) under VO.
+
 ### Entry 22 — PROJECT CLOSED: "Log Out" final cost accounting — 668 credits net
 Authoritative ledger tally (CLI `account transactions`): 716 credits spent − 48 refunded (failed 4s batch) = **668 credits net** for the complete 62s film, including all style exploration, dead directions, and retries. ~260 of that was style-finding (anchors, probes, dead ends); ~320 was the 12 final shots + fixes; 8 for character sheets. Balance after: 980.27.
 - **Lesson:** the transaction ledger (`higgsfield account transactions`) is the only authoritative cost source — session notes undercounted early style tests. Tally from the ledger at project close, not from memory.
