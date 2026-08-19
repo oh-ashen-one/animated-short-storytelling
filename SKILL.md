@@ -90,11 +90,25 @@ When a film wraps, ship a public "how I made it" page on Notion. The community p
 - **Notion markdown:** `<video src="URL">caption</video>`, `<audio src="URL">caption</audio>`, `![caption](URL)` for images; prompts in fenced code blocks (no escaping needed inside code blocks).
 - **Publishing is manual:** the API can create the page but cannot flip it public — end by telling the director to hit Share → Publish.
 
+## Model reference — MiniMax direct API (preferred for video)
+
+H3 video generation moved to MiniMax's own pay-as-you-go API on 2026-08-19: **$0.13/sec at 2K, $0.08/sec at 768P** — ~35% cheaper than Higgsfield credits (~$0.19–0.20/sec equivalent). Reference images: first 5 free per generation, $0.04 each after. Key lives in `~/.config/shorts-factory/.env` as `MINIMAX_API_KEY`; the API key is the pay-as-you-go kind — **Token Plan subscriptions and prepaid Credits do NOT cover H3 video**.
+
+Wrapper: `~/shorts-factory/h3.sh` (submit → poll → download, bash + curl + python3):
+
+- `h3.sh gen --prompt-file .prompt-01.txt --out shot-01.mp4 --duration 5 --resolution 2K --ratio 9:16 --ref <sheet>`
+- `--ref` / `--first-frame` / `--last-frame` accept a local path (auto-uploaded), an `mm_file://<file_id>`, or an https URL. Character sheets go in as `role=reference_image`.
+- `h3.sh upload <file>` → prints a `file_id` (uploads valid 7 days, image sides 256–5760px). Reference as `mm_file://<file_id>`.
+- `h3.sh status <task_id>`; `gen --async` submits and returns the task_id without waiting (for wave-of-4 batching).
+- Raw endpoints: `POST /v2/video_generation` (multimodal `content[]` array — H3 rejects the v1 endpoint), `GET /v2/query/video_generation/<task_id>` (success → `task.content.url` is the download link directly), `POST /v1/files/upload` with `purpose=video_generation_input`.
+- Duration 4–15s int, resolution 768P|2K, ratio required for text-to-video but omitted/adaptive with image inputs. 4s works fine on the direct API (unlike Higgsfield's 4s failures).
+- Task list endpoint covers the last 7 days (`task_type=generation`) — that's the Phase 8 prompt-recovery path for direct-API films.
+
 ## Model reference — Higgsfield CLI
 
 Install: `npm i -g @higgsfield/cli`, auth: `higgsfield auth login`, then select a billing workspace first (`higgsfield workspace list` / `workspace set <id>`) — cost and generate calls fail without one.
 
-### MiniMax H3 (`minimax_h3`) — anime-capable video
+### MiniMax H3 (`minimax_h3`) — anime-capable video (legacy path, superseded by direct API)
 
 - Resolution: **2K only**. Aspect ratios: auto, 21:9, 16:9, 4:3, 1:1, 3:4, 9:16.
 - Duration: integer seconds, **5–15** usable (schema says ≥4 but a 4s batch failed 3/3 server-side while 5s+ succeeded — avoid 4).

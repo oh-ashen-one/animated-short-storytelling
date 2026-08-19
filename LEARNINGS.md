@@ -4,6 +4,20 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-08-19 — PIPELINE MIGRATION: H3 video moved to MiniMax direct API
+
+### Entry 30 — Direct-API migration: verified end-to-end, ~35% cheaper — $0.96 test spend
+Higgsfield bills H3 at 4cr/sec (~$0.19–0.20/sec effective). MiniMax's own pay-as-you-go API bills **$0.13/sec at 2K / $0.08/sec at 768P**, so a 12×5s episode is ~$7.80 vs ~$11.40. Migrated video generation to the direct API; Higgsfield CLI stays for image models (Nano Banana 2 sheets) and ad-hoc hosting.
+- **Verified on live tasks:** text-to-video (4s/768P/9:16, ~100s wall clock), reference-image generation with the PS2 char sheet (kid stayed on-model: yellow tee, blue shorts, proportions), and the `h3.sh` wrapper (submit → poll → download) round-trip. 3 test tasks, $0.96 total.
+- **Lesson (billing rails):** MiniMax has THREE wallets and only one pays for H3 — pay-as-you-go cash balance via the standard API key. Token Plan subscriptions and prepaid Credits explicitly exclude H3 video ("special models"). Error `1008` = wrong/empty rail, not a bad key.
+- **Lesson (endpoints):** H3 requires `POST /v2/video_generation` with a multimodal `content[]` array (v1 endpoint rejects with `2013`). Success returns the download URL directly at `task.content.url` — no file_id exchange. Poll `GET /v2/query/video_generation/<task_id>` every 10s.
+- **Lesson (reference images):** upload via `POST /v1/files/upload` with `purpose=video_generation_input`, then pass `mm_file://<file_id>` as an `image_url` item with `role=reference_image`. Uploads live 7 days; image sides must be 256–5760px; first 5 reference images per gen are free. `role=first_frame`/`last_frame` for keyframe-locked shots; `ratio` is required for pure t2v but omitted with image inputs.
+- **Lesson (4s works here):** the Higgsfield 4s failures were their proxy, not the model — 4s direct-API tasks succeeded 3/3. Shots can now be sized to 4s for fast VO lines, saving 20%/shot.
+- **Lesson (ops):** macOS bash 3.2 + `set -u` chokes on empty arrays (`"${arr[@]}"` unbound) — guard with `${arr[@]+"${arr[@]}"}` in wrappers. Also: `login fail` (1004) on every official host meant a malformed key paste; the real format is `sk-api-…`.
+- **State:** wrapper at `~/shorts-factory/h3.sh`, key at `~/.config/shorts-factory/.env`. MiniMax balance $30 (~$29 left). Higgsfield balance 736.2cr held in reserve for image models.
+
+---
+
 ## 2026-08-19 — PRODUCTION SUCCESS: "Log Out" complete rough cut
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
