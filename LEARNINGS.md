@@ -8,6 +8,10 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 Film concept: kids-and-phones commentary, voiceover-driven, no character dialogue. Style anchor: **early-2000s PS2 low-poly 3D** (locked after style trials — see entries 9–11). Character: young boy, yellow t-shirt / blue shorts / white sneakers; the 2D anime turnaround sheet was abandoned with the anime direction — a dedicated in-style 3D sheet is required.
 
+### Entry 16 — Shot 1 v2 (adult parents fix), MiniMax H3, 5s @ 9:16 2K, 20 credits — GOOD
+Applied Entry 14's lessons: "tall adult man with broad shoulders, adult woman with long hair, adults tower over the small child" + "black smartphone". Parents now read unmistakably as adults (angular tall dad, long-haired mom), both heads-down on black phones; push-in ends on the kid's blue-lit face with the glowing phone on the table before him — clean cut point, exactly the handover beat.
+- **Lesson confirmed:** explicit adult markers + stated size gap reliably fixes parent/child ambiguity in low-poly chibi styles. One regen, no iteration loop.
+
 ### Entry 15 — Shots 4 & 5, PS2 style with sheet, MiniMax H3, 2× 5s @ 9:16 2K, 40 credits — GOOD (pending director)
 - Shot 4 (hallway): kid walks toward camera between locker rows; every background kid head-down on a glowing phone, faces blue-lit. On-model, composition exactly as prompted.
 - Shot 5 (cafeteria): near-table kid alone on his phone, rows of kids at far tables all on phones. Prompt asked for "one long table, group at far end" — model split into separate cafeteria tables. Beat still reads ("together but alone"), so accepted.
