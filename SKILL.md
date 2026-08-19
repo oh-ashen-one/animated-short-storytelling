@@ -92,4 +92,4 @@ Install: `npm i -g @higgsfield/cli`, auth: `higgsfield auth login`, then select 
 
 ## Evolving this skill
 
-After every session: append dated entries to `LEARNINGS.md` (model, cost, verdict, lesson). Fold workflow-changing lessons back into this file. Never log private info — no account identifiers, workspace IDs, job URLs, tokens, or absolute personal paths.
+**Update this repo continuously and unprompted — never wait to be asked.** During the session, the moment anything happens (a verdict, a cost surprise, a model quirk, a creative decision), append a dated entry to `LEARNINGS.md`; when a lesson changes the workflow, fold it into this file in the same pass. Commit and push after each update. After every session: one final sweep so nothing lives only in chat. Never log private info — no account identifiers, workspace IDs, job URLs, tokens, or absolute personal paths.
