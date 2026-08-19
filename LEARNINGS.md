@@ -8,6 +8,11 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
 
+### Entry 22 — PROJECT CLOSED: "Log Out" final cost accounting — 668 credits net
+Authoritative ledger tally (CLI `account transactions`): 716 credits spent − 48 refunded (failed 4s batch) = **668 credits net** for the complete 62s film, including all style exploration, dead directions, and retries. ~260 of that was style-finding (anchors, probes, dead ends); ~320 was the 12 final shots + fixes; 8 for character sheets. Balance after: 980.27.
+- **Lesson:** the transaction ledger (`higgsfield account transactions`) is the only authoritative cost source — session notes undercounted early style tests. Tally from the ledger at project close, not from memory.
+- **Benchmark for future films:** a 60s 12-shot film with full style exploration ≈ 650–700 credits. A second film in an ALREADY-locked style should cost ~240 (12× 5s × 4cr) + sheet + retakes buffer ≈ 300. Style exploration is the expensive part; lock styles once, reuse forever.
+
 ### Entry 21 — Soundtrack rule added: one Suno prompt per FILM — no cost
 Director requirement: every generation session must ship with a Suno prompt for background audio. Key constraint: ONE fluid track for the whole 60s clip, never per-shot. For "Log Out" the brief was foreboding/sad/gloomy/weird-melancholy — delivered two variants (detuned music box + tape hiss; drone-ambient with buried playground sounds).
 - **Lesson:** score the film, not the shots. Per-shot music fights the VO; one continuous ambient bed holds a 60s short together.
