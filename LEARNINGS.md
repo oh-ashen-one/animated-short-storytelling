@@ -4,9 +4,18 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
-## 2026-08-18 — Production: "Log Out" (62s VO-driven short, 90s cel anime style)
+## 2026-08-18 — Production: "Log Out" (62s VO-driven short, PS2 low-poly style)
 
-Film concept: kids-and-phones commentary, voiceover-driven, no character dialogue. Style anchor: 1990s retro cel anime. Character: young boy, yellow t-shirt / blue shorts / white sneakers, locked via Nano Banana 2 turnaround sheet.
+Film concept: kids-and-phones commentary, voiceover-driven, no character dialogue. Style anchor: **early-2000s PS2 low-poly 3D** (locked after style trials — see entries 9–11). Character: young boy, yellow t-shirt / blue shorts / white sneakers; the 2D anime turnaround sheet was abandoned with the anime direction — a dedicated in-style 3D sheet is required.
+
+### Entry 12 — Shot 2 (playground bench), PS2 style, MiniMax H3, 5s @ 9:16 2K, 20 credits — pending director verdict
+Kid alone on a bench hunched over a glowing handheld, other kids playing in fog behind him, empty swings. Prompted child proportions explicitly ("small child, young kid proportions, oversized head"). On review: the kid finally reads as a CHILD (big head, small body) — the Entry 9 grown-man defect is fixed. Fog, muddy ground, muted grade all landed; background kids animate while he stays locked on the screen, which carries the beat.
+- **Lesson:** "young kid proportions, oversized head, short stature" in the prompt reliably fixes age drift in low-poly 3D styles. Include on every shot with the kid.
+
+### Entry 11 — Shot 1 v3 (aggressive retro anime): REJECTED — retro direction dead — 20 credits
+v3 used the hard-pushed retro suffix from Entry 8 (1980s hand-painted, thick ink outlines, heavy grain, dust and scratches). The retro look landed this time, but the director rejected it anyway ("shit too"). All 2D anime directions (Ghibli, 90s cel, aggressive retro, blend) are now dead for this film.
+- **Lesson:** a style can execute correctly and still be wrong for the project. Style selection is taste, not correctness — test cheap (5s anchors) before committing shots.
+- **Decision:** PS2 low-poly is the film's style. Reference clip: the original PS2 test (kid running, foggy sidewalk). Every shot gets the PS2 suffix verbatim (Entry 9).
 
 ### Entry 1 — Shot 1 (dinner table), MiniMax H3, 10s @ 16:9 2K, 40 credits — GOOD
 Slow push-in, two adults on glowing phones hand the kid a phone; ends on close-up of his face. Character sheet passed as `--image` reference — kid stayed perfectly on-model. Minor deviation: both adults read as older women instead of mom+dad; harmless.
