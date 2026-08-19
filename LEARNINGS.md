@@ -8,6 +8,14 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 Film concept: kids-and-phones commentary, voiceover-driven, no character dialogue. Style anchor: **early-2000s PS2 low-poly 3D** (locked after style trials — see entries 9–11). Character: young boy, yellow t-shirt / blue shorts / white sneakers; the 2D anime turnaround sheet was abandoned with the anime direction — a dedicated in-style 3D sheet is required.
 
+### Entry 14 — Shots 1 & 3, PS2 style with sheet as `--image`, MiniMax H3, 2× 5s @ 9:16 2K, 40 credits — MIXED
+Sheet-as-reference pipeline works: the kid stayed on-model (yellow tee, proportions) in both.
+- Shot 3 (bedroom, blue glow on face, moonlit window): STRONG. Reads as a child, mood lands, on-model. Candidate keeper.
+- Shot 1 (dinner table): mood/composition right (dim room, family heads-down on glowing screens) but the "mother and father" rendered as child-sized siblings — in low-poly chibi proportions, adults and kids look the same age unless you differentiate. The slide-the-phone beat also read ambiguously (glowing object read as a laptop).
+- **Lesson:** low-poly child proportions flatten age differences. For adults, prompt explicit adult markers: "tall adult man with broad shoulders" / "adult woman with long hair," and state the size gap ("adults tower over the small child"). Don't rely on "mother and father" alone.
+- **Lesson:** specify key props concretely ("black smartphone") — "glowing phone" drifted into a laptop-like slab.
+- **Observation:** sheet-referenced shots render slightly cleaner/smoother than the raw PS2 test (less grime/aliasing). The reference image pulls toward its own cleanliness. Acceptable, but if more grit is wanted, push the texture words harder when a sheet is attached.
+
 ### Entry 13 — PS2 character sheet, Nano Banana 2, 1 image — GOOD (pending director)
 Dedicated in-style 3D turnaround (front/side/back/three-quarter) for the "Log Out" kid: young Pakistani boy, ~10, brown skin, messy black hair, yellow tee / blue shorts / white sneakers, child proportions with oversized head. Prompt spelled out "child proportions with oversized head and short stature" — result reads clearly as a kid. Replaces the abandoned 2D anime sheet as the `--image` reference for all PS2 shots.
 - **Lesson:** one sheet per STYLE, not per film. When the style anchor changes medium (2D cel → 3D low-poly), regenerate the sheet in the new medium before rolling shots.
