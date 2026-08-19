@@ -8,6 +8,17 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 Film concept: kids-and-phones commentary, voiceover-driven, no character dialogue. Style anchor: **early-2000s PS2 low-poly 3D** (locked after style trials — see entries 9–11). Character: young boy, yellow t-shirt / blue shorts / white sneakers; the 2D anime turnaround sheet was abandoned with the anime direction — a dedicated in-style 3D sheet is required.
 
+### Entry 18 — Concurrency limit discovered, MiniMax H3 — no cost
+Firing 7 parallel jobs: 2 rejected immediately with `rate_limit_reached` — `concurrent_jobs_limit: 4` per job set on the Ultimate plan (private workspace). Rejected jobs are NOT charged.
+- **Lesson:** max 4 parallel `minimax_h3` generations. Batch in waves of 4; queue the rest and fire as slots free. Applies per model job-set, not account-wide.
+
+### Entry 17 — Full-batch generation of remaining shots, MiniMax H3, 7× 5s @ 9:16 2K, 140 credits — fired
+Director approved shots 1–5 ("these look sick") and ordered the rest in one batch. Production decisions:
+- Shots WITHOUT the kid in the foreground (tower, boardroom, feed wall, city pull-back, final silhouette) run style-suffix-only, no `--image` sheet — prevents the reference from bleeding onto extras/backgrounds.
+- Keepers staged in a project folder (`log-out/shots/`) with clean names, plus the sheet and style reference, instead of loose Downloads files.
+- **Lesson:** batch the remaining shots once the director approves the look — per-shot approval is for the style-finding phase, not the rolling phase.
+- **Lesson:** skip the character sheet on shots where the character is absent or a distant silhouette; the reference image is a strong prior and will contaminate scenes that shouldn't feature him.
+
 ### Entry 16 — Shot 1 v2 (adult parents fix), MiniMax H3, 5s @ 9:16 2K, 20 credits — GOOD
 Applied Entry 14's lessons: "tall adult man with broad shoulders, adult woman with long hair, adults tower over the small child" + "black smartphone". Parents now read unmistakably as adults (angular tall dad, long-haired mom), both heads-down on black phones; push-in ends on the kid's blue-lit face with the glowing phone on the table before him — clean cut point, exactly the handover beat.
 - **Lesson confirmed:** explicit adult markers + stated size gap reliably fixes parent/child ambiguity in low-poly chibi styles. One regen, no iteration loop.
