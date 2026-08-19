@@ -33,14 +33,20 @@ A production workflow for making coherent animated shorts from text-to-video mod
 - Generate 2–4 short test clips (5s is enough) of the SAME simple scene in candidate styles. One scene, one variable (style), fair comparison.
 - Watch them. Pick ONE anchor. Kill the rest. A style that "blends" two anchors usually differentiates poorly — prefer a single strong identity.
 - **Nostalgia is a first-class selection criterion.** Between two working styles, pick the one with nostalgic pull (retro cel, VHS, low-poly game graphics, film grain) over the one that's merely pretty. Note: Ghibli-painterly tests beautiful but is overused and reads generic, not nostalgic — avoid as a default.
-- Write the winning style as a **style suffix** — a fixed string appended verbatim to every shot prompt. Example that tested well:
-  `1990s retro anime style, cel shaded animation, film grain, vintage anime aesthetic`
+- **A style can execute correctly and still be wrong for the project.** Style selection is taste, not correctness — that's why anchors are tested cheap (5s) before any real shots.
+- **Style intensity = texture-level instructions, not era labels.** Mild suffixes ("1990s retro anime style, film grain") drift back to the model's polished default, especially in dark interiors. Push retro HARD and concretely: ink lines, dust and scratches, frame-rate feel, palette fade.
+- **Don't build a film's identity on artifacts the model won't reliably produce.** Analog-artifact keywords ("scan lines", "VHS tracking distortion") were ignored by MiniMax H3 in testing — the clip came out clean and modern. Test the artifact, not just the scene.
+- Write the winning style as a **style suffix** — a fixed string appended verbatim to every shot prompt. Examples that tested well:
+  - `1990s retro anime style, cel shaded animation, film grain, vintage anime aesthetic`
+  - `Early 2000s PS2 era video game graphics, GTA style low poly 3D, flat muddy textures, jagged aliased edges, muted gray-brown color grading, foggy draw distance, RenderWare aesthetic` ← strongest nostalgia anchor found to date
 
 ### Phase 3 — Character sheet
 
 - Generate a character reference sheet with an image model BEFORE any film shots: full-body front/side/back turnaround + face close-up + palette, plain background.
+- **One sheet per STYLE, not per film.** If the style anchor changes medium (2D cel → 3D low-poly), regenerate the sheet in the new medium. A 2D sheet anchoring 3D shots is untested and likely counterproductive.
+- **Age-drift guard:** models age characters up by default. If the character is a child, prompt it explicitly in the sheet AND every shot: "young kid proportions, oversized head, short stature". Verified fix for a grown-man-reading character in low-poly 3D.
 - Lock a simple, distinctive outfit in the sheet prompt (specific colors). Every later prompt references the same outfit words.
-- Pass the sheet as an image reference on EVERY shot (`--image <sheet>` with the Higgsfield CLI). Verified: keeps the character on-model across shots.
+- Pass the sheet as an image reference on EVERY shot (`--image <sheet>` with the Higgsfield CLI). Verified: keeps the character on-model across shots. Note: sheet-referenced shots drift slightly cleaner/smoother than the raw style test — if you want maximum grit, push the texture words harder when a sheet is attached.
 - Do NOT use the sheet as a start/frame image — it's a reference, not a first frame. If a shot needs a specific first frame, generate a dedicated keyframe image for that shot.
 
 ### Phase 4 — Shot list
@@ -66,7 +72,7 @@ Install: `npm i -g @higgsfield/cli`, auth: `higgsfield auth login`, then select 
 
 - Resolution: **2K only**. Aspect ratios: auto, 21:9, 16:9, 4:3, 1:1, 3:4, 9:16.
 - Duration: integer seconds, **5–15** usable (schema says ≥4 but a 4s batch failed 3/3 server-side while 5s+ succeeded — avoid 4).
-- Cost: **4 credits/sec** at 16:9 2K (10s = 40, 15s = 60). Failed jobs are NOT charged.
+- Cost: **4 credits/sec** at 2K (verified at 16:9 and 9:16; 5s = 20, 10s = 40, 15s = 60). Failed jobs are NOT charged.
 - Media inputs: `--image` (reference), `--start-image`, `--end-image`, reference arrays. A character sheet passed via `--image` keeps the character consistent.
 - Discovery: `higgsfield model get minimax_h3 --json`. The schema omits min/max for duration — probe limits with `higgsfield generate cost <model> --duration N` (free) instead of burning a generation.
 - Generate: `higgsfield generate create minimax_h3 --prompt "..." --image sheet.png --duration 10 --aspect_ratio 16:9 --resolution 2K --wait --wait-timeout 20m`
@@ -79,6 +85,8 @@ Install: `npm i -g @higgsfield/cli`, auth: `higgsfield auth login`, then select 
 
 - Structure: `[scene + action + mood + camera move]. [style suffix]`
 - Name the character the same way every time ("a young boy in a yellow t-shirt...") even with a sheet attached — belt and suspenders.
+- **Adults in chibi/low-poly styles:** child proportions flatten age differences — "mother and father" alone renders as same-sized siblings. Prompt explicit adult markers ("tall adult man with broad shoulders", "adult woman with long hair") and state the size gap ("adults tower over the small child").
+- **Props:** name them concretely ("black smartphone"). Vague props drift — "glowing phone" came back as a laptop-like slab.
 - Mood words do heavy lifting in dialogue-free films: "melancholic", "lonely", "bittersweet".
 - Ending a shot "on" something (a face, an object) gives the edit a clean cut point.
 
