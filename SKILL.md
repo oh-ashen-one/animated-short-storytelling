@@ -63,6 +63,7 @@ For each shot, write: number, timecode, story beat, one-sentence action, camera 
 
 - Concatenate in an editor (or ffmpeg), lay VO and music, color/level pass, done.
 - Trim to target runtime in the edit; generating exact durations to the frame is not worth the effort.
+- **Soundtrack: always deliver ONE Suno prompt alongside the film, not per-shot.** The score is a single fluid piece for the whole runtime — per-shot music is choppy and pointless under VO. Write the prompt to the film's emotional thesis (for melancholic tech-commentary: detuned music box / nostalgic-video-game-menu-wrong / tape hiss / no drums / no drops / instrumental). Tell the director to toggle Instrumental in Suno explicitly and generate 2–3 takes — Suno over-decorates long tracks.
 
 ## Model reference — Higgsfield CLI
 

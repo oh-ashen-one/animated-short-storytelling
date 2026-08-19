@@ -8,6 +8,12 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
 
+### Entry 21 — Soundtrack rule added: one Suno prompt per FILM — no cost
+Director requirement: every generation session must ship with a Suno prompt for background audio. Key constraint: ONE fluid track for the whole 60s clip, never per-shot. For "Log Out" the brief was foreboding/sad/gloomy/weird-melancholy — delivered two variants (detuned music box + tape hiss; drone-ambient with buried playground sounds).
+- **Lesson:** score the film, not the shots. Per-shot music fights the VO; one continuous ambient bed holds a 60s short together.
+- **Lesson:** no Suno generation actor exists on Apify (only a downloader) — Suno stays a manual paste-in step until an API path appears. Recheck periodically.
+- **Suno craft:** toggle Instrumental explicitly; generate multiple takes and pick the sparsest — the model over-decorates past 30s; explicitly ban drums/drops/structure in the prompt for ambient beds.
+
 ### Entry 20 — End-to-end validation: WHAT WORKED, as a recipe
 - Concept → style anchors (5s cheap tests) → ONE anchor locked on nostalgic pull (PS2 low-poly beat Ghibli, 90s cel, aggressive retro, VHS)
 - In-style character sheet (Nano Banana 2) → passed as `--image` on every character shot → zero character drift across 12 shots
