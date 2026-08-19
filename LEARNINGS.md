@@ -8,6 +8,15 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
 
+### Entry 27 — Cinematic craft research pass (GitHub + official guides) — no spend
+Director note: "doesn't have to be deadpan — make it as cinematic and beautiful and unique as possible, steal from the best open-source work." Surveyed the highest-signal public repos and official model guides; folded the rules into SKILL.md "Cinematic prompt craft" and applied them to the Slot Machine script v2.
+- **Sources:** github.com/jnMetaCode/ai-shortfilm-prompts (~358★, best single find — 5-stage prompt structure, 50-move camera library, genre SOPs), github.com/OSideMedia/higgsfield-ai-prompt-skill (~362★, Higgsfield-native, failure-mode catalog), MiniMax H3 usage manual (via Pixo translation), official Runway Gen-4 / Kling / Sora 2 / Luma prompting guides, prompt-architects slop-tells writeup, github.com/songguoxs/awesome-video-prompts (~575★).
+- **Lesson (H3-critical):** the legacy Hailuo `[bracket]` camera commands are documented for V1 models only — H3 wants natural-language camera direction, and cuts between shots by default, so "one continuous take, no cuts" belongs in every single-shot prompt.
+- **Lesson:** every vendor's formula converges on the same anatomy — subject → one action → scene → ONE camera move → physical light source → style. One move per shot is the most-repeated rule in the entire corpus.
+- **Lesson:** palette lock (3–5 named colors verbatim per shot) + named light sources + ambient motion are the three cheapest anti-slop levers. Grade in the prompt, never in post.
+- **Lesson:** iteration is the craft — pros keep 1 in 3-20 takes. Budget retakes by shot difficulty; screen-within-screen is a hard shot type.
+- **Note:** this niche formed in 2026 — even the best repos sit at 300-600★; weight production-tested depth over raw stars.
+
 ### Entry 26 — Episode 2 greenlit: "Slot Machine" — script phase, no spend
 Director picked Slot Machine from the 15-idea list (over Battery Low, the previous top pick). 12-beat script written: the pull-to-refresh feed as a literal slot machine; escalation arc moves the world from playground → casino floor → the house tuning the win rate → unresolved cut-to-black mid-spin. Reuses the locked PS2 style, the same kid/char sheet, and Ep1 locations (bench, playground, tower) as recurring lore — Est. cost ~240 credits (12 × 5s) + retakes, no style exploration needed.
 - **Lesson:** a locked style + recurring character turns episode 2 into a pure production exercise — the expensive part of Ep1 (~260cr) was style-finding, which is now a sunk, reusable asset.

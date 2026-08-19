@@ -103,6 +103,40 @@ Install: `npm i -g @higgsfield/cli`, auth: `higgsfield auth login`, then select 
 
 - Produces excellent production-style turnaround sheets (front/side/back + portrait + palette swatches) from a single prompt. Occasional transient HTTP 503 — just retry.
 
+## Cinematic prompt craft (research pass, 2026-08-19 — sources in LEARNINGS Entry 27)
+
+Distilled from the best public work: jnMetaCode/ai-shortfilm-prompts, OSideMedia/higgsfield-ai-prompt-skill, the MiniMax H3 usage manual, and the official Runway/Kling/Sora/Luma prompting guides. These rules override the older heuristics wherever they conflict.
+
+### Prompt anatomy (H3-native)
+
+Per-shot prompt = **shot size + composition → subject (locked description) → ONE action beat in sequential verbs (setup → action → landing) → ONE camera move in its own sentence → named physical light source + locked palette block → style suffix → "One continuous take, no cuts." + "No score. Production audio only."**
+- H3 cuts between shots by default — "one continuous take, no cuts" is mandatory.
+- H3 does NOT support the legacy Hailuo `[bracket]` camera commands — natural-language camera direction only.
+- ~150–200 words per prompt is the sweet spot; walls of adjectives dilute.
+
+### Camera discipline
+
+- **ONE dominant camera move per shot, in its own sentence.** Stacked moves (push + pan + rise) render as unreadable instability. If two are needed, sequence them by time ("rises, holds, then pushes in").
+- Melancholy/horror genre pairing: locked-off holds, very slow push-ins, reveal-by-pull-back, slow lateral trucks, end shots one beat late. Smoothness kills dread.
+- "Static" is a trap word (models read it as interference) — write "locked-off" or "locked-off wide shot".
+- Push-in ≠ zoom-in (perspective vs scale); always specify which.
+
+### Light, palette, atmosphere
+
+- **Name a physical light source, never "soft lighting"**: "cold phone glow on his face is the only light source", "warm golden-hour light, long shadows".
+- **Lock a 3–5 color palette block and repeat it verbatim in every shot.** Color drift wrecks a stitched edit; grade upstream in the prompt, not in post (AI video has low color bitrate — post grading bands).
+- A palette can carry story: define when an accent color is ALLOWED to appear ("neon pink only where the machine reveals itself").
+- Every shot needs ambient motion — drifting fog, dust, swaying swings, neon flicker. A static background can't carry atmosphere.
+
+### Slop tells to kill
+
+- Vague-praise tokens ("epic, stunning, 4K, highly detailed") give the model nothing — concrete camera/light/physics only.
+- Too-perfect surfaces read as plastic CG; keep the world's dirt in the prompt.
+- Action-reversal fill: if the action finishes at 2s of a 5s clip, the model runs it in reverse — chain the action to fill the runtime.
+- Screen-within-screen (reels ON a phone) is a high-drift setup — write the screen's contents explicitly and budget double retakes for those shots.
+- Review takes frame-by-frame; mine rejected takes for usable 1–2s moments.
+- Iteration IS the craft: pros render 2–3 variants for easy shots, 20+ for hard ones. Log takes-per-kept per shot type.
+
 ## Prompting patterns that tested well
 
 - Structure: `[scene + action + mood + camera move]. [style suffix]`
