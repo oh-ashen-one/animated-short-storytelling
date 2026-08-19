@@ -14,6 +14,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 
 ## Golden rules
 
+1. **Never generate without explicit director confirmation.** Quote the cost first, wait for a green light. (Director rule, 2026-08-19.) Style/vibe tests are ALWAYS the minimum duration — 4s on the direct API — never longer.
 1. **Never raw-dog text-to-video for a multi-shot film.** Character and style will drift between clips. Always anchor with a character sheet and a locked style suffix (see below).
 2. **Plan the budget before generating.** Video models charge per second. Do the math first, keep a retake buffer, and test cheap before committing.
 3. **One narration/story beat per shot.** If a shot carries two beats, split it or simplify it.
