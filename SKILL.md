@@ -56,6 +56,9 @@ For each shot, write: number, timecode, story beat, one-sentence action, camera 
 ### Phase 5 — Generate
 
 - Fire shots individually or in small parallel batches; review each before generating the next. A wrong vibe in shot 1 poisons the whole film.
+- **Pass prompts from files, not inline** — `--prompt "$(cat .prompt-NN.txt)"`. Apostrophes/em-dashes in inline prompts can break the shell mid-batch (the job survives; your wait loop doesn't).
+- **Screen-within-screen works on H3** (verified 3/3 first-take in Ep2): write the screen's content explicitly ("the phone screen clearly shows three spinning slot machine reels") and keep the camera to one slow move.
+- Failed jobs may show a partial charge followed by a refund minutes later — tally net from the ledger at close, never mid-run balances.
 - Regenerate weak shots immediately — that's what the buffer is for. Don't "fix it in the edit."
 - Download and keep every keeper with a strict naming scheme: `shot-01.mp4`, `shot-02.mp4`, ...
 

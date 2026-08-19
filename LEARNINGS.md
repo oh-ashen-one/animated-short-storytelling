@@ -8,6 +8,14 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
 
+### Entry 28 — PRODUCTION: Episode 2 "Slot Machine" complete — 240cr net, 12/12 keepers, zero taste rejections
+First fully unattended goal-mode production. 13 jobs fired, 12 keepers accepted, 1 server-side failure (shot 2, take 1). Ledger (`account transactions`): 256 spent − 16 refunded = **240cr net** vs 668cr for Ep1. Every keeper was accepted on its first WATCHED take — the cinematic-craft prompt anatomy (Entry 27) held across all 12 shots, including all three screen-within-screen hard shots (2, 6, 9).
+- **Lesson (screen-within-screen is SOLVED on H3):** "The phone screen clearly shows [explicit content]" + locked-off or single-drift camera rendered legible spinning reels, three-cherry jackpots, clock-coins dropping into a coin slot, and reel symbols of the kid's own life — all first take. The Entry 26 watch item is closed.
+- **Lesson (ledger):** failed jobs are not always zero-touch — shot 2's failure charged −16 then refunded +16 four minutes later. Net zero, but the ledger shows both legs; tally net, not gross, and don't panic at mid-run balance dips.
+- **Lesson (ops):** fire prompts from files — `--prompt "$(cat .prompt-NN.txt)"` — never inline with apostrophes; an inline em-dash/apostrophe broke one shell command mid-batch (job survived, the wait loop didn't). Also: `generate list` status can flicker completed→in_progress (eventual consistency) — recheck after ~30s before concluding anything.
+- **Lesson (review):** watching every take at ~2fps frame dumps is sufficient to catch age drift, palette leaks, and mushy camera moves — no slower review needed.
+- **Benchmark updated:** episode 2 in a locked style with locked character: 240cr and ~25 min wall clock. Style exploration (Ep1's ~260cr) is a one-time cost per series.
+
 ### Entry 27 — Cinematic craft research pass (GitHub + official guides) — no spend
 Director note: "doesn't have to be deadpan — make it as cinematic and beautiful and unique as possible, steal from the best open-source work." Surveyed the highest-signal public repos and official model guides; folded the rules into SKILL.md "Cinematic prompt craft" and applied them to the Slot Machine script v2.
 - **Sources:** github.com/jnMetaCode/ai-shortfilm-prompts (~358★, best single find — 5-stage prompt structure, 50-move camera library, genre SOPs), github.com/OSideMedia/higgsfield-ai-prompt-skill (~362★, Higgsfield-native, failure-mode catalog), MiniMax H3 usage manual (via Pixo translation), official Runway Gen-4 / Kling / Sora 2 / Luma prompting guides, prompt-architects slop-tells writeup, github.com/songguoxs/awesome-video-prompts (~575★).
