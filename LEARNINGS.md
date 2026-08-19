@@ -8,6 +8,10 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 Film concept: kids-and-phones commentary, voiceover-driven, no character dialogue. Style anchor: **early-2000s PS2 low-poly 3D** (locked after style trials — see entries 9–11). Character: young boy, yellow t-shirt / blue shorts / white sneakers; the 2D anime turnaround sheet was abandoned with the anime direction — a dedicated in-style 3D sheet is required.
 
+### Entry 13 — PS2 character sheet, Nano Banana 2, 1 image — GOOD (pending director)
+Dedicated in-style 3D turnaround (front/side/back/three-quarter) for the "Log Out" kid: young Pakistani boy, ~10, brown skin, messy black hair, yellow tee / blue shorts / white sneakers, child proportions with oversized head. Prompt spelled out "child proportions with oversized head and short stature" — result reads clearly as a kid. Replaces the abandoned 2D anime sheet as the `--image` reference for all PS2 shots.
+- **Lesson:** one sheet per STYLE, not per film. When the style anchor changes medium (2D cel → 3D low-poly), regenerate the sheet in the new medium before rolling shots.
+
 ### Entry 12 — Shot 2 (playground bench), PS2 style, MiniMax H3, 5s @ 9:16 2K, 20 credits — pending director verdict
 Kid alone on a bench hunched over a glowing handheld, other kids playing in fog behind him, empty swings. Prompted child proportions explicitly ("small child, young kid proportions, oversized head"). On review: the kid finally reads as a CHILD (big head, small body) — the Entry 9 grown-man defect is fixed. Fog, muddy ground, muted grade all landed; background kids animate while he stays locked on the screen, which carries the beat.
 - **Lesson:** "young kid proportions, oversized head, short stature" in the prompt reliably fixes age drift in low-poly 3D styles. Include on every shot with the kid.
