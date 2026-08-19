@@ -4,6 +4,22 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-08-19 — PRODUCTION SUCCESS: "Log Out" complete rough cut
+
+**The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
+
+### Entry 20 — End-to-end validation: WHAT WORKED, as a recipe
+- Concept → style anchors (5s cheap tests) → ONE anchor locked on nostalgic pull (PS2 low-poly beat Ghibli, 90s cel, aggressive retro, VHS)
+- In-style character sheet (Nano Banana 2) → passed as `--image` on every character shot → zero character drift across 12 shots
+- Style suffix verbatim on every prompt; child proportions + concrete props + adult markers spelled out
+- Script sized to VO: 12 beats × ~5s = 62s target hit exactly, no trimming
+- Batch generation in waves of ≤4 (concurrency limit), one retry per freed slot, failures never charged
+- Assembly: ffmpeg concat demuxer, `-c copy -an` → lossless, instant, exactly 62.000s
+- Total spend for the full film including style exploration and all retries: ~400 credits (~$? — record $ per credit when known)
+- **This session is the reference implementation of the skill. When in doubt, replay this recipe.**
+
+---
+
 ## 2026-08-18 — Production: "Log Out" (62s VO-driven short, PS2 low-poly style)
 
 Film concept: kids-and-phones commentary, voiceover-driven, no character dialogue. Style anchor: **early-2000s PS2 low-poly 3D** (locked after style trials — see entries 9–11). Character: young boy, yellow t-shirt / blue shorts / white sneakers; the 2D anime turnaround sheet was abandoned with the anime direction — a dedicated in-style 3D sheet is required.
