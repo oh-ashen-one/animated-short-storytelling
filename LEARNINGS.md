@@ -8,6 +8,11 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
 
+### Entry 26 — Episode 2 greenlit: "Slot Machine" — script phase, no spend
+Director picked Slot Machine from the 15-idea list (over Battery Low, the previous top pick). 12-beat script written: the pull-to-refresh feed as a literal slot machine; escalation arc moves the world from playground → casino floor → the house tuning the win rate → unresolved cut-to-black mid-spin. Reuses the locked PS2 style, the same kid/char sheet, and Ep1 locations (bench, playground, tower) as recurring lore — Est. cost ~240 credits (12 × 5s) + retakes, no style exploration needed.
+- **Lesson:** a locked style + recurring character turns episode 2 into a pure production exercise — the expensive part of Ep1 (~260cr) was style-finding, which is now a sunk, reusable asset.
+- **Watch item:** screen-within-screen shots (reels ON the phone) are the expected drift point; shots 2, 6, 9 carry retake budget.
+
 ### Entry 25 — Public breakdown page shipped (Notion) — no credits, pure process
 Built the community-facing "how I made it" page for "Log Out" on Notion via MCP: every shot with its verbatim prompt in a code block + embedded output video, char sheet, score audio, full rough cut, cost numbers. Folded the whole recipe into SKILL.md Phase 8.
 - **Lesson:** exact prompts are recoverable after the fact — `higgsfield generate list --json` → `generate get <id> --json` → `params.prompt`. Do NOT rely on chat history or memory for the public record.
