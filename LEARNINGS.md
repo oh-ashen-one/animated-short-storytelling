@@ -8,6 +8,13 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 **The full pipeline in this skill produced a finished 62s animated short in one session.** 12 shots, 9:16 2K, PS2 low-poly style, one consistent character throughout, assembled frame-exact at 62.000s. Director's verdict on the final cut: "Okay amazing, this is all really good."
 
+### Entry 25 — Public breakdown page shipped (Notion) — no credits, pure process
+Built the community-facing "how I made it" page for "Log Out" on Notion via MCP: every shot with its verbatim prompt in a code block + embedded output video, char sheet, score audio, full rough cut, cost numbers. Folded the whole recipe into SKILL.md Phase 8.
+- **Lesson:** exact prompts are recoverable after the fact — `higgsfield generate list --json` → `generate get <id> --json` → `params.prompt`. Do NOT rely on chat history or memory for the public record.
+- **Lesson:** jobs don't map to `shot-NN.mp4` by name or time — match by byte size (`curl -sI <result_url>` content-length vs local file). All 12 shots + sheet + style test + score matched cleanly this way; two unused regens fell out as unmatched.
+- **Lesson:** generation result URLs are public CDN links — embed directly, zero hosting step. The assembled rough cut has no URL; `higgsfield upload create` gives it one.
+- **Lesson:** Notion MCP can build the full page (video/audio/image embeds from external URLs work), but cannot make it public — Share → Publish is a manual director click.
+
 ### Entry 24 — Distribution teardown: top AI-satire reels account (40 reels, 1 week) — Apify scrape
 Scraped a leading AI-satire reels account via Apify `instagram-reel-scraper` to reverse-engineer the packaging. Findings folded into SKILL.md Phase 7. Key data: median 104k views, ~5.3% like rate, 6-7 posts/day, ≥50s reels overperform (135k vs 88k median), frame-1 premise cards, fragment-per-shot captions (median 18 chars), ~34 cuts/min, zero hashtags/CTAs, serialized lore + end-card.
 - **Validation:** his single most on-brand reel for us ("nostalgia larp") is literally PS2 low-poly 3D — a kid staring at a tablet in a chunky-polygon living room. The "Log Out" aesthetic is proven on this exact audience.

@@ -76,6 +76,16 @@ The film isn't done when it's assembled — package it for the feed:
 - Trim to target runtime in the edit; generating exact durations to the frame is not worth the effort.
 - **Soundtrack: always deliver ONE Suno prompt alongside the film, not per-shot.** The score is a single fluid piece for the whole runtime — per-shot music is choppy and pointless under VO. Write the prompt to the film's emotional thesis (for melancholic tech-commentary: detuned music box / nostalgic-video-game-menu-wrong / tape hiss / no drums / no drops / instrumental). Tell the director to toggle Instrumental in Suno explicitly and generate 2–3 takes — Suno over-decorates long tracks.
 
+### Phase 8 — Public process breakdown (Notion)
+
+When a film wraps, ship a public "how I made it" page on Notion. The community post IS part of the deliverable — don't wait to be asked.
+
+- **Structure:** what the film is → tools used → style recipe (suffix verbatim) → character sheet (prompt + image) → every shot in order with its verbatim prompt in a code block and the output video embedded directly under it → score prompt + playable audio → the full rough cut embedded → numbers (shot count, credits spent, failures) → one big-lesson callout.
+- **Recover exact prompts from generation history, never from memory or chat:** `higgsfield generate list --json`, then `higgsfield generate get <id> --json` → `params.prompt`. Match jobs to local shot files by byte size (`curl -sI <result_url>` content-length vs local file size) — job names and timestamps will not map to `shot-NN.mp4` on their own.
+- **Hosting is free:** generation `result_url`s are public CDN links — embed them directly. The assembled rough cut has no URL; upload it with `higgsfield upload create <file>` and embed the returned URL.
+- **Notion markdown:** `<video src="URL">caption</video>`, `<audio src="URL">caption</audio>`, `![caption](URL)` for images; prompts in fenced code blocks (no escaping needed inside code blocks).
+- **Publishing is manual:** the API can create the page but cannot flip it public — end by telling the director to hit Share → Publish.
+
 ## Model reference — Higgsfield CLI
 
 Install: `npm i -g @higgsfield/cli`, auth: `higgsfield auth login`, then select a billing workspace first (`higgsfield workspace list` / `workspace set <id>`) — cost and generate calls fail without one.
