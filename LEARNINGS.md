@@ -4,7 +4,19 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
-## 2026-08-20 — Session wrap: Ep3 closed + skill sweep
+## 2026-08-20 — PRODUCTION: Episode 4 "Corn" (65.75s, PS1 dither)
+
+### Entry 37 — Ep4 full production, first ZERO-retake run — $6.48 cash + ~4cr sheets
+13-shot censorship-safe wake-up call about "corn" addiction (true-crime cold open → kid hooked by the algorithm → brain rewires → relationships/perception ruined → boardroom pivot → way-out montage → phone-doorway closer). Ran autonomously under a goal-mode delegation — the director pre-authorized judging takes solo. **13/13 first-take keepers, zero retakes, zero wasted dollars.**
+- **Style A/B ($0.64):** PS1 dither vs N64 fog, same couch scene, 4s/768P. PS1 won on register — grainy, oppressive, true-crime; N64 came back soft/cute (wrong tone for menace). PS1 faces held stable across the whole clip. Locked suffix: `late 1990s PS1 era video game graphics, low poly 3D, heavy screen dithering, wobbling affine textures, jagged aliased edges, chunky visible pixels, dark muted color grading, CRT grain`.
+- **Aging two-sheet casting WORKED:** kid sheet + young-man sheet (Nano Banana 2, ~4cr), same outfit palette (grey-beige sweater / dark jeans / white sneakers), round glasses on both. Shots 3→5 match-cut kid→man and the audience reads one character. New casting pattern for age arcs.
+- **Recurring surreal signature:** corn stalks growing from the phone (shots 4, 5, 11, 12, 13). First use of a deliberate per-episode motif; rendered reliably when placed concretely in the prompt ("a single small corn stalk sprouts from the bottom edge of the phone").
+- **Lesson (judge on LATE frames too):** shot 7's two brain scans only showed one burn pattern at 2.5s — the "patterns light up" action completed by 4.5s and both matched. A mid-clip frame nearly cost an unneeded retake. Check early AND late frames before rejecting a take with a time-locked action.
+- **Lesson (abstract shots):** "brain as living circuitry" renders abstract-cavern; acceptable under VO, but pure-interior-concept shots are the most variable. They work when the VO names what we're seeing.
+- **Spend:** $6.48 MiniMax cash total (tests $0.64 + wave1 $1.92 + wave2 $1.60 + wave3 $2.32) + ~4cr sheets. Cheapest episode to date (Ep2: 240cr ≈ $12, Ep3: $12.49). Assembly: ffmpeg concat `-c copy -an`, 65.75s, 768×1344 verified. Real copies in film-cut (CapCut rule).
+- **State:** film-cut + rough cut + sheets copied to Studio and opened. Notion breakdown shipped. Balance after run: ~$5 MiniMax cash — TOP UP before Ep5.
+
+---
 
 ### Entry 36 — Final skill fold-in after "Boiling Point" — no spend
 Ep3 closed (footage locked, rough cut, Notion breakdown shipped). End-of-session sweep folded the remaining chat-only lessons into SKILL.md:

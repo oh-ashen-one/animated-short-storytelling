@@ -56,6 +56,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 - Lock a simple, distinctive outfit in the sheet prompt (specific colors). Every later prompt references the same outfit words.
 - Pass the sheet as an image reference on EVERY shot (`--image <sheet>` with the Higgsfield CLI). Verified: keeps the character on-model across shots. Note: sheet-referenced shots drift slightly cleaner/smoother than the raw style test — if you want maximum grit, push the texture words harder when a sheet is attached.
 - Do NOT use the sheet as a start/frame image — it's a reference, not a first frame. If a shot needs a specific first frame, generate a dedicated keyframe image for that shot.
+- **Age arcs: one sheet per AGE, same outfit.** A character who is a kid in early shots and an adult later gets two sheets (kid proportions + adult proportions) in the same style with identical outfit colors and one carryover feature (e.g. round glasses). The match-cut between the last kid shot and the first adult shot sells the years. (Verified in Ep4 — zero drift across the age jump.)
 
 ### Phase 4 — Shot list
 
@@ -73,6 +74,7 @@ For each shot, write: number, timecode, story beat, one-sentence action, camera 
 - **Screen-within-screen works on H3** (verified 3/3 first-take in Ep2): write the screen's content explicitly ("the phone screen clearly shows three spinning slot machine reels") and keep the camera to one slow move.
 - Failed jobs may show a partial charge followed by a refund minutes later — tally net from the ledger at close, never mid-run balances.
 - Regenerate weak shots immediately — that's what the buffer is for. Don't "fix it in the edit."
+- **Judge on early AND late frames.** A time-locked action ("the patterns light up") may only complete in the final second — a mid-clip frame can look like a failed take and trick you into an unneeded retake. (Ep4 shot 7: one brain-scan pattern at 2.5s, both matching by 4.5s.)
 - **Artifact tolerance:** a short (~2s), non-narrative-breaking artifact on an otherwise strong take is keepable. Cap retakes per shot (3 max), keep the best, flag it, and offer the director one priced retake after they watch the file — don't burn budget chasing perfection unprompted.
 - Download and keep every keeper with a strict naming scheme: `shot-01.mp4`, `shot-02.mp4`, ...
 
