@@ -15,15 +15,16 @@ A production workflow for making coherent animated shorts from text-to-video mod
 ## Golden rules
 
 1. **Never generate without explicit director confirmation.** Quote the cost first, wait for a green light. (Director rule, 2026-08-19.) Style/vibe tests are ALWAYS the minimum duration — 4s on the direct API — never longer.
-1. **Never raw-dog text-to-video for a multi-shot film.** Character and style will drift between clips. Always anchor with a character sheet and a locked style suffix (see below).
-2. **Plan the budget before generating.** Video models charge per second. Do the math first, keep a retake buffer, and test cheap before committing.
-3. **Every on-screen human is cast as a recognizable famous figure** (movie, TV, anime, game, historical — anything that stops the scroll). One anchor per episode (e.g. Hank Hill, Batman), named explicitly in the char-sheet prompt and every character shot. Supporting faces get their own sheet or stay silhouettes.
-3. **One narration/story beat per shot.** If a shot carries two beats, split it or simplify it.
-4. **Simple camera moves.** Static, slow push-in, slow pull-back, gentle drift. Fast/zooming moves are where face-morphing and ghosting artifacts live.
-5. **As little on-screen text as possible — and what exists must be static.** Small fonts, counters, and UI chrome are the #1 AI-slop tell: numbers that increment, spin, or tick ("like counter climbs past 40,000") render as garbled morphing slop. Rules for screen-within-screen: ONE short headline max, large font, static for the whole take (it may slowly pulse/glow — "emanate, not increment"); never counters, tickers, notification badges, or body text; keep the screen de-emphasized (over-shoulder, low in frame) with focus on the person/environment instead of a macro of the display. (Director rule, 2026-08-19, after a rejected take.)
-6. **Episodes must be creatively distinct.** Not just a new script — a new TOPIC, world, cast, and emotional register. Ep1 and Ep2 were both "addictive algorithms" with the same kid, same locations, same melancholy; the director's verdict: "way too similar — we have the entire world of creativity." Recurring style/character lore is a seasoning, not the meal. When pitching episode ideas, explicitly check the pitch against every previous episode's topic and theme; anything in the same thematic neighborhood gets reworked or cut. (Director rule, 2026-08-19.)
-7. **Exploit the medium — go mythical/surreal when the shot allows it.** We are not bound to documentary realism: if a shot (especially a closer) can carry an impossible image — data-fireflies rising off wet lawns, a sky-whale, frozen glass water — prefer it over a "normal human thing." One mythic element per shot, anchored in the scene's reality, never a random fantasy pile-on. (Director rule, 2026-08-19.)
-8. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
+2. **Never pre-judge takes.** Download everything and present it all — the director judges the footage together with you, on the actual files. Don't filter or rank before he watches. (Director rule, 2026-08-20.)
+3. **Never raw-dog text-to-video for a multi-shot film.** Character and style will drift between clips. Always anchor with a character sheet and a locked style suffix (see below).
+4. **Plan the budget before generating.** Video models charge per second. Do the math first, keep a retake buffer, and test cheap before committing.
+5. **Every on-screen human is cast as a recognizable famous figure** (movie, TV, anime, game, historical — anything that stops the scroll). One anchor per episode (e.g. Hank Hill, Batman). **Describe the likeness, never name the celebrity** — the image and video models IP-check named people and reject or deface them; "a middle-aged Texas propane-salesman type with a mustache and a white shirt" gets through, the name doesn't. Each recurring cast member gets their own same-style char sheet; background faces stay silhouettes.
+6. **One narration/story beat per shot.** If a shot carries two beats, split it or simplify it.
+7. **Simple camera moves.** Static, slow push-in, slow pull-back, gentle drift. Fast/zooming moves are where face-morphing and ghosting artifacts live.
+8. **As little on-screen text as possible — and what exists must be static.** Small fonts, counters, and UI chrome are the #1 AI-slop tell: numbers that increment, spin, or tick ("like counter climbs past 40,000") render as garbled morphing slop. Rules for screen-within-screen: ONE short headline max, large font, static for the whole take (it may slowly pulse/glow — "emanate, not increment"); never counters, tickers, notification badges, or body text; keep the screen de-emphasized (over-shoulder, low in frame) with focus on the person/environment instead of a macro of the display. Any "engagement goes up" beat must be carried by performance and framing (face, glow, posture), never by UI motion. (Director rule, 2026-08-19, after a rejected take.)
+9. **Episodes must be creatively distinct.** Not just a new script — a new TOPIC, world, cast, and emotional register. Ep1 and Ep2 were both "addictive algorithms" with the same kid, same locations, same melancholy; the director's verdict: "way too similar — we have the entire world of creativity." Recurring style/character lore is a seasoning, not the meal. When pitching episode ideas, explicitly check the pitch against every previous episode's topic and theme; anything in the same thematic neighborhood gets reworked or cut. (Director rule, 2026-08-19.)
+10. **Exploit the medium — go mythical/surreal when the shot allows it.** We are not bound to documentary realism: if a shot (especially a closer) can carry an impossible image — data-fireflies rising off wet lawns, a sky-whale, frozen glass water — prefer it over a "normal human thing." One mythic element per shot, anchored in the scene's reality, never a random fantasy pile-on. Put it FIRST and BIG in the prompt — as one clause in a long prompt H3 sheds it and it never renders. And keep it SUBTLE on screen (director on the sky-whale take: "more subtle next time"). (Director rule, 2026-08-19.)
+11. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
 
 ## Workflow
 
@@ -38,12 +39,14 @@ A production workflow for making coherent animated shorts from text-to-video mod
 - Generate 2–4 short test clips (5s is enough) of the SAME simple scene in candidate styles. One scene, one variable (style), fair comparison.
 - Watch them. Pick ONE anchor. Kill the rest. A style that "blends" two anchors usually differentiates poorly — prefer a single strong identity.
 - **Nostalgia is a first-class selection criterion.** Between two working styles, pick the one with nostalgic pull (retro cel, VHS, low-poly game graphics, film grain) over the one that's merely pretty. Note: Ghibli-painterly tests beautiful but is overused and reads generic, not nostalgic — avoid as a default.
+- **H3 carries painterly environments, not anime faces.** Humans rendered in anime/watercolor styles read as AI slop; the SAME styles' environment-only shots (night car wash, golf course) tested "fire" with the director. Keep humans in the retro-game family (low-poly 3D); reserve painterly styles for environment shots. (2026-08-19 style trials.)
 - **A style can execute correctly and still be wrong for the project.** Style selection is taste, not correctness — that's why anchors are tested cheap (5s) before any real shots.
 - **Style intensity = texture-level instructions, not era labels.** Mild suffixes ("1990s retro anime style, film grain") drift back to the model's polished default, especially in dark interiors. Push retro HARD and concretely: ink lines, dust and scratches, frame-rate feel, palette fade.
 - **Don't build a film's identity on artifacts the model won't reliably produce.** Analog-artifact keywords ("scan lines", "VHS tracking distortion") were ignored by MiniMax H3 in testing — the clip came out clean and modern. Test the artifact, not just the scene.
 - Write the winning style as a **style suffix** — a fixed string appended verbatim to every shot prompt. Examples that tested well:
   - `1990s retro anime style, cel shaded animation, film grain, vintage anime aesthetic`
   - `Early 2000s PS2 era video game graphics, GTA style low poly 3D, flat muddy textures, jagged aliased edges, muted gray-brown color grading, foggy draw distance, RenderWare aesthetic` ← strongest nostalgia anchor found to date
+  - `mid-2000s early HD era video game graphics, GTA IV era low poly 3D, desaturated brown-gray color grading, harsh bloom lighting, baked-in shadows, plasticky specular sheen, slight motion blur` ← Ep3 anchor ("PS3"). The whole retro-game family tested strong: PS1 (dither/jitter), N64 (blur/fog), PS3/GTA-IV, prerendered survival-horror (slightly meh — blocky heads).
 
 ### Phase 3 — Character sheet
 
@@ -58,15 +61,27 @@ A production workflow for making coherent animated shorts from text-to-video mod
 
 For each shot, write: number, timecode, story beat, one-sentence action, camera move (keep it simple), and the final generation prompt (scene description + style suffix). Repeat set/location descriptions word-for-word between shots sharing a location.
 
+**Presenting the script to the director (his rule, 2026-08-20):** he records the VO himself — never present the script as written prose. Show each shot as a one-liner of what the viewer SEES (summarized look, not the full prompt); suggested VO lines go BELOW the shot list, clearly marked as suggestions.
+
 ### Phase 5 — Generate
 
 - Fire shots individually or in small parallel batches; review each before generating the next. A wrong vibe in shot 1 poisons the whole film.
+- **ffprobe the FIRST downloaded file of every batch** against the intended delivery frame (resolution + aspect) before firing the rest — a cheap probe catches systemic wrapper/ratio bugs before they waste a whole batch. (Ep3: three 16:9 takes before anyone checked.)
+- **Style varies seed to seed.** Identical prompt + suffix on a new seed can come back visibly softer ("looks PS2 not PS3"). Budget retakes on hero shots; a re-roll is often all it takes.
+- **4s shots are the right unit for inventory montages** (fast-fashion rack, almond rows, golf sprinklers...): ~6 montage items ≈ 24–28s of VO room.
 - **Pass prompts from files, not inline** — `--prompt "$(cat .prompt-NN.txt)"`. Apostrophes/em-dashes in inline prompts can break the shell mid-batch (the job survives; your wait loop doesn't).
 - **Screen-within-screen works on H3** (verified 3/3 first-take in Ep2): write the screen's content explicitly ("the phone screen clearly shows three spinning slot machine reels") and keep the camera to one slow move.
 - Failed jobs may show a partial charge followed by a refund minutes later — tally net from the ledger at close, never mid-run balances.
 - Regenerate weak shots immediately — that's what the buffer is for. Don't "fix it in the edit."
 - **Artifact tolerance:** a short (~2s), non-narrative-breaking artifact on an otherwise strong take is keepable. Cap retakes per shot (3 max), keep the best, flag it, and offer the director one priced retake after they watch the file — don't burn budget chasing perfection unprompted.
 - Download and keep every keeper with a strict naming scheme: `shot-01.mp4`, `shot-02.mp4`, ...
+
+### Phase 6 — Assemble
+
+- Concatenate in an editor (or ffmpeg), lay VO and music, color/level pass, done.
+- Trim to target runtime in the edit; generating exact durations to the frame is not worth the effort.
+- **CapCut rejects symlinks** ("not accessible" on import). Delivery/film-cut folders must be REAL file copies — bytes are cheap; copy, don't link.
+- **Soundtrack: always deliver ONE Suno prompt alongside the film, not per-shot.** The score is a single fluid piece for the whole runtime — per-shot music is choppy and pointless under VO. Write the prompt to the film's emotional thesis (for melancholic tech-commentary: detuned music box / nostalgic-video-game-menu-wrong / tape hiss / no drums / no drops / instrumental). Tell the director to toggle Instrumental in Suno explicitly and generate 2–3 takes — Suno over-decorates long tracks.
 
 ### Phase 7 — Packaging for social (from a 40-reel teardown of a top AI-satire account)
 
@@ -78,12 +93,6 @@ The film isn't done when it's assembled — package it for the feed:
 - **Deadpan tonal contrast:** let the sadness sit under flat narration. Never wink.
 - **Longer reels overperform** for this format (≥50s beats <50s). 60s is a feature, not a risk.
 - **Recurring signature:** one recurring element per film (a sound motif, an object, a card) — serialized universes reward follows. No hashtags, no CTAs in the caption.
-
-### Phase 6 — Assemble
-
-- Concatenate in an editor (or ffmpeg), lay VO and music, color/level pass, done.
-- Trim to target runtime in the edit; generating exact durations to the frame is not worth the effort.
-- **Soundtrack: always deliver ONE Suno prompt alongside the film, not per-shot.** The score is a single fluid piece for the whole runtime — per-shot music is choppy and pointless under VO. Write the prompt to the film's emotional thesis (for melancholic tech-commentary: detuned music box / nostalgic-video-game-menu-wrong / tape hiss / no drums / no drops / instrumental). Tell the director to toggle Instrumental in Suno explicitly and generate 2–3 takes — Suno over-decorates long tracks.
 
 ### Phase 8 — Public process breakdown (Notion)
 

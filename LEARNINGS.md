@@ -4,6 +4,20 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-08-20 — Session wrap: Ep3 closed + skill sweep
+
+### Entry 36 — Final skill fold-in after "Boiling Point" — no spend
+Ep3 closed (footage locked, rough cut, Notion breakdown shipped). End-of-session sweep folded the remaining chat-only lessons into SKILL.md:
+- Golden rules renumbered 1–11 (were duplicated/broken); added **#2 never pre-judge takes** (director judges together on the actual files); corrected **#5 casting** — likeness is DESCRIBED, never named (IP checks); **#10 surreal** gained "first and big in the prompt or H3 sheds it" + the director's "more subtle" caveat.
+- Style section: H3 carries painterly environments but not anime faces (humans stay retro-game); PS3/GTA-IV suffix added verbatim as the second tested anchor.
+- Phase 4: script-presentation rule (scenes as one-liners, VO suggestions below — he records his own VO).
+- Phase 5: ffprobe-first-download per batch; seed-to-seed style variance; 4s = montage unit.
+- Phase 6: CapCut rejects symlinks — real copies only. Phase order fixed (Assemble before Packaging).
+- **House rule in ~/AGENTS.md updated to match Entry 34:** 768P is the standard, 2K photoreal-only (the old line still said "2K only, never 768P").
+- **Ops reminder for Ep4:** MiniMax cash balance ~$12 — tell the director to top up before the next production.
+
+---
+
 ## 2026-08-19 — PIPELINE MIGRATION: H3 video moved to MiniMax direct API
 
 ### Entry 35 — Ep3 "Boiling Point" full footage locked + restructure — $12.49 session spend
