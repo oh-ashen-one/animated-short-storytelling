@@ -93,13 +93,13 @@ When a film wraps, ship a public "how I made it" page on Notion. The community p
 - **Notion markdown:** `<video src="URL">caption</video>`, `<audio src="URL">caption</audio>`, `![caption](URL)` for images; prompts in fenced code blocks (no escaping needed inside code blocks).
 - **Publishing is manual:** the API can create the page but cannot flip it public — end by telling the director to hit Share → Publish.
 
-## Model reference — MiniMax direct API (ALL video gen, 2K only)
+## Model reference — MiniMax direct API (ALL video gen, 768P standard)
 
-**House rule (director, 2026-08-19): every video generation goes through MiniMax's direct pay-as-you-go API at 2K. No 768P, no Higgsfield video. Everything else (images, audio, uploads) goes through the Higgsfield CLI.** Direct API costs **$0.13/sec at 2K** — ~35% cheaper than Higgsfield credits (~$0.19–0.20/sec equivalent). Reference images: first 5 free per generation, $0.04 each after. Key lives in `~/.config/shorts-factory/.env` as `MINIMAX_API_KEY`; the API key is the pay-as-you-go kind — **Token Plan subscriptions and prepaid Credits do NOT cover H3 video**.
+**House rule (director, 2026-08-19): every video generation goes through MiniMax's direct pay-as-you-go API at 768P. No Higgsfield video. 2K is reserved for photoreal styles only (explicit override) — for low-poly/retro-game looks, 2K's extra detail is invisible at delivery size and costs 62% more.** Direct API costs **$0.08/sec at 768P** ($0.13/sec at 2K) — vs ~$0.19–0.20/sec equivalent through Higgsfield credits. Reference images: first 5 free per generation, $0.04 each after. Key lives in `~/.config/shorts-factory/.env` as `MINIMAX_API_KEY`; the API key is the pay-as-you-go kind — **Token Plan subscriptions and prepaid Credits do NOT cover H3 video**. Note: 768P vertical renders 768×1344 (7:4, ~2% wider than 9:16) — crop/pad at assembly.
 
 Wrapper: `~/shorts-factory/h3.sh` (submit → poll → download, bash + curl + python3):
 
-- `h3.sh gen --prompt-file .prompt-01.txt --out shot-01.mp4 --duration 5 --ratio 9:16 --ref <sheet>` — resolution is forced to 2K, no flag.
+- `h3.sh gen --prompt-file .prompt-01.txt --out shot-01.mp4 --duration 5 --ratio 9:16 --ref <sheet>` — resolution defaults to 768P; `--resolution 2K` for photoreal overrides (prints a warning).
 - `--ref` / `--first-frame` / `--last-frame` accept a local path (auto-uploaded), an `mm_file://<file_id>`, or an https URL. Character sheets go in as `role=reference_image`.
 - `h3.sh upload <file>` → prints a `file_id` (uploads valid 7 days, image sides 256–5760px). Reference as `mm_file://<file_id>`.
 - `h3.sh status <task_id>`; `gen --async` submits and returns the task_id without waiting (for wave-of-4 batching).

@@ -6,6 +6,12 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ## 2026-08-19 — PIPELINE MIGRATION: H3 video moved to MiniMax direct API
 
+### Entry 34 — HOUSE RULE FLIP: 768P is the new standard — saves 38.5%/sec
+Director A/B'd a 768P probe vs the 2K take of Ep3 shot 2 (same prompt, same sheet): "768 looks exactly the same." Verified with native-res frame crops — 2K holds ~10-15% more micro-detail (skin shading, hair strands), all of it invisible at delivery size (feeds serve ~1080px wide) and absorbed by the low-poly/bloom/desaturated PS3 aesthetic.
+- **New rule:** video gen defaults to **768P ($0.08/s)**; 2K ($0.13/s) reserved for photoreal styles via explicit `--resolution 2K`. `h3.sh` default flipped (2K now prints the off-rule warning). 5s shot: $0.40 vs $0.65; 12-shot episode: $4.80 vs $7.80.
+- **Lesson:** resolution value is style-dependent. Chunky low-poly + bloom + desaturation + motion blur is an aesthetic that IS softness — paying for 2K detail the style throws away is waste. Photoreal is where 768P would fall apart.
+- **Watch item:** 768P vertical renders 768×1344 (7:4), ~2% wider than true 9:16 — crop/pad ~15px/side at assembly. Also: the "iterate cheap then final at 2K" pattern stays dead — it only beats direct finals above a ~60% rejection rate, and the final is now 768P anyway.
+
 ### Entry 33 — Shot 2 take 1 REJECTED (incrementing counter = slop) + new text rule — $0.65 retake
 The 9:16 re-roll of shots 1–3 came back clean and on-model ($1.95, ratio fix held). Shots 1 and 3 kept. Shot 2 rejected: the brief called for a like counter "spinning upward past forty thousand" and floating notification hearts — the incrementing numbers rendered as morphing AI slop.
 - **Rule (folded into SKILL.md golden rules):** as little on-screen text as possible, and what exists must be STATIC. One short headline, large font, fixed for the whole take — it may slowly pulse/emanate, never increment. No counters, tickers, badges, or body text. De-emphasize screens (over-shoulder, low in frame); focus on the person, not a macro of the display.
