@@ -6,6 +6,13 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ## 2026-08-19 — PIPELINE MIGRATION: H3 video moved to MiniMax direct API
 
+### Entry 32 — h3.sh ratio bug: ref-attached jobs went 16:9 — $4.42 total ($1.95 wasted + $0.52 verify + $1.95 re-roll)
+Ep3 shots 1–3 came back 2560×1440 despite `--ratio 9:16`. Root cause: the wrapper omitted `ratio` whenever a reference image was attached (per the docs note "ratio adaptive with image inputs"), and the char sheets are landscape 1376×768 — so the API adapted to the refs and produced 16:9. Director caught it on review: "this shit is fucking landscape."
+- **Fix:** `h3.sh` now ALWAYS sends `ratio` unless a first/last frame is attached (keyframe-locked shots genuinely need adaptive). One 4s verification gen with the landscape girl sheet attached returned **1440×2560** — an explicit `ratio` beats ref-image aspect on the H3 API. Fix verified live before re-rolling.
+- **Lesson:** "adaptive with image inputs" is the API's DEFAULT, not a constraint — always pass the delivery ratio explicitly, even with refs attached. Landscape character sheets are fine for 9:16 output as long as `ratio` is sent.
+- **Lesson (process):** ffprobe the FIRST downloaded file of every batch against the intended delivery frame (1440×2560) before firing the rest — a $0.52 probe would have caught this before $1.95 of landscape takes.
+- **Lesson (docs drift):** the SKILL.md API notes said "ratio omitted/adaptive with image inputs" — that guidance caused the bug. Corrected to: ratio required for t2v, RECOMMENDED explicit with image inputs, omitted only with first/last-frame.
+
 ### Entry 31 — Style exploration round 2 + two director rules — $4.50 test spend
 Style tests for Ep3 ("Boiling Point", AI-water episode), all 4-5s @ 2K via direct API.
 - **Verdicts (director):** anime styles with humans read as AI slop — 90s OVA and watercolor kid shots both rejected. But the OVA/watercolor ATMOSPHERE shots (night car wash, golf course) were "fire" — H3 carries painterly environments, not anime faces.

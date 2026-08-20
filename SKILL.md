@@ -103,7 +103,7 @@ Wrapper: `~/shorts-factory/h3.sh` (submit → poll → download, bash + curl + p
 - `h3.sh upload <file>` → prints a `file_id` (uploads valid 7 days, image sides 256–5760px). Reference as `mm_file://<file_id>`.
 - `h3.sh status <task_id>`; `gen --async` submits and returns the task_id without waiting (for wave-of-4 batching).
 - Raw endpoints: `POST /v2/video_generation` (multimodal `content[]` array — H3 rejects the v1 endpoint), `GET /v2/query/video_generation/<task_id>` (success → `task.content.url` is the download link directly), `POST /v1/files/upload` with `purpose=video_generation_input`.
-- Duration 4–15s int, resolution 768P|2K, ratio required for text-to-video but omitted/adaptive with image inputs. 4s works fine on the direct API (unlike Higgsfield's 4s failures).
+- Duration 4–15s int, resolution 768P|2K. Ratio: required for text-to-video; with image inputs the API DEFAULTS to adapting to the ref's aspect — always send the delivery ratio explicitly (a landscape sheet + `ratio: 9:16` returns 1440×2560, verified). Omit only with first/last-frame keyframes. 4s works fine on the direct API (unlike Higgsfield's 4s failures).
 - Task list endpoint covers the last 7 days (`task_type=generation`) — that's the Phase 8 prompt-recovery path for direct-API films.
 
 ## Model reference — Higgsfield CLI
