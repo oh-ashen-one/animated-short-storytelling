@@ -6,6 +6,15 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ## 2026-08-19 — PIPELINE MIGRATION: H3 video moved to MiniMax direct API
 
+### Entry 35 — Ep3 "Boiling Point" full footage locked + restructure — $12.49 session spend
+Episode expanded mid-flight from a 12-shot Hank-and-lawns film into a 17-shot, 6-act arc after the director's notes: too much lawn/golf, too many "guy standing around" shots, and four required new beats (hypocrisy montage, datacenter-buildout fair point, boycott-futility, Global-South uplift). Final cut order: 01 02 03 / 13 14 15 16 04 07 / 17 / 18 19 20 / 21 22 / 23 12c (~85s).
+- **Casting worked:** 3 new sheets (Keanu-coded widower, young-Zuck-coded dorm kid, Jamal-coded Karachi kid) via descriptive prompts (no celebrity names — the Hank-era IP-check lesson holds), Nano Banana 2, 16:9, GTA-IV style. All three read instantly.
+- **Lesson (surreal elements):** small/particle surrealism gets SHED by H3 — "blue data-motes rising off lawns" was one clause in a long prompt and never rendered (12b). The whale-led rewrite (12c, surreal element FIRST and huge) rendered. Rule folded into golden rule #7: one mythic element, big and early in the prompt. Director caveat logged: keep the surreal SUBTLE — 12c was "not bad but more subtle next time."
+- **Lesson (style variance):** identical suffix, new seed = softer geometry ("looks PS2 not PS3"). Style rolls vary; budget retakes on hero shots.
+- **Lesson (delivery):** CapCut import rejects SYMLINKS ("not accessible") — film-cut folders must be real copies. Bytes are cheap; copy, don't link.
+- **Lesson (montage pacing):** 4s shots are the right unit for inventory montages; 6 montage items ≈ 24-28s of VO room.
+- **State:** 17-shot film-cut folder assembled (`boiling-point/film-cut/`), off to CapCut for the director's VO edit. Session spend $12.49 cash (incl. $1.95 ratio-bug waste + $1.05 closer variants) + ~12cr sheets. Balance ~$12 MiniMax cash remaining — top up before Ep4.
+
 ### Entry 34 — HOUSE RULE FLIP: 768P is the new standard — saves 38.5%/sec
 Director A/B'd a 768P probe vs the 2K take of Ep3 shot 2 (same prompt, same sheet): "768 looks exactly the same." Verified with native-res frame crops — 2K holds ~10-15% more micro-detail (skin shading, hair strands), all of it invisible at delivery size (feeds serve ~1080px wide) and absorbed by the low-poly/bloom/desaturated PS3 aesthetic.
 - **New rule:** video gen defaults to **768P ($0.08/s)**; 2K ($0.13/s) reserved for photoreal styles via explicit `--resolution 2K`. `h3.sh` default flipped (2K now prints the off-rule warning). 5s shot: $0.40 vs $0.65; 12-shot episode: $4.80 vs $7.80.
