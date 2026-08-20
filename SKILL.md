@@ -20,7 +20,8 @@ A production workflow for making coherent animated shorts from text-to-video mod
 3. **Every on-screen human is cast as a recognizable famous figure** (movie, TV, anime, game, historical — anything that stops the scroll). One anchor per episode (e.g. Hank Hill, Batman), named explicitly in the char-sheet prompt and every character shot. Supporting faces get their own sheet or stay silhouettes.
 3. **One narration/story beat per shot.** If a shot carries two beats, split it or simplify it.
 4. **Simple camera moves.** Static, slow push-in, slow pull-back, gentle drift. Fast/zooming moves are where face-morphing and ghosting artifacts live.
-5. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
+5. **As little on-screen text as possible — and what exists must be static.** Small fonts, counters, and UI chrome are the #1 AI-slop tell: numbers that increment, spin, or tick ("like counter climbs past 40,000") render as garbled morphing slop. Rules for screen-within-screen: ONE short headline max, large font, static for the whole take (it may slowly pulse/glow — "emanate, not increment"); never counters, tickers, notification badges, or body text; keep the screen de-emphasized (over-shoulder, low in frame) with focus on the person/environment instead of a macro of the display. (Director rule, 2026-08-19, after a rejected take.)
+6. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
 
 ## Workflow
 

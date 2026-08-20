@@ -6,6 +6,12 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ## 2026-08-19 — PIPELINE MIGRATION: H3 video moved to MiniMax direct API
 
+### Entry 33 — Shot 2 take 1 REJECTED (incrementing counter = slop) + new text rule — $0.65 retake
+The 9:16 re-roll of shots 1–3 came back clean and on-model ($1.95, ratio fix held). Shots 1 and 3 kept. Shot 2 rejected: the brief called for a like counter "spinning upward past forty thousand" and floating notification hearts — the incrementing numbers rendered as morphing AI slop.
+- **Rule (folded into SKILL.md golden rules):** as little on-screen text as possible, and what exists must be STATIC. One short headline, large font, fixed for the whole take — it may slowly pulse/emanate, never increment. No counters, tickers, badges, or body text. De-emphasize screens (over-shoulder, low in frame); focus on the person, not a macro of the display.
+- **Lesson:** rapidly changing numbers/text are the strongest slop tell H3 has — worse than anime faces. Any "engagement goes up" story beat must be carried by performance and framing (face, glow, posture), never by UI motion.
+- **Retake prompt change:** macro-of-screen → over-shoulder with the phone low in frame; counter + hearts → one static pulsing headline; focus moved to the girl's glow-lit face.
+
 ### Entry 32 — h3.sh ratio bug: ref-attached jobs went 16:9 — $4.42 total ($1.95 wasted + $0.52 verify + $1.95 re-roll)
 Ep3 shots 1–3 came back 2560×1440 despite `--ratio 9:16`. Root cause: the wrapper omitted `ratio` whenever a reference image was attached (per the docs note "ratio adaptive with image inputs"), and the char sheets are landscape 1376×768 — so the API adapted to the refs and produced 16:9. Director caught it on review: "this shit is fucking landscape."
 - **Fix:** `h3.sh` now ALWAYS sends `ratio` unless a first/last frame is attached (keyframe-locked shots genuinely need adaptive). One 4s verification gen with the landscape girl sheet attached returned **1440×2560** — an explicit `ratio` beats ref-image aspect on the H3 API. Fix verified live before re-rolling.
