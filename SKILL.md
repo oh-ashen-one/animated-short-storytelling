@@ -21,7 +21,8 @@ A production workflow for making coherent animated shorts from text-to-video mod
 3. **One narration/story beat per shot.** If a shot carries two beats, split it or simplify it.
 4. **Simple camera moves.** Static, slow push-in, slow pull-back, gentle drift. Fast/zooming moves are where face-morphing and ghosting artifacts live.
 5. **As little on-screen text as possible — and what exists must be static.** Small fonts, counters, and UI chrome are the #1 AI-slop tell: numbers that increment, spin, or tick ("like counter climbs past 40,000") render as garbled morphing slop. Rules for screen-within-screen: ONE short headline max, large font, static for the whole take (it may slowly pulse/glow — "emanate, not increment"); never counters, tickers, notification badges, or body text; keep the screen de-emphasized (over-shoulder, low in frame) with focus on the person/environment instead of a macro of the display. (Director rule, 2026-08-19, after a rejected take.)
-6. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
+6. **Episodes must be creatively distinct.** Not just a new script — a new TOPIC, world, cast, and emotional register. Ep1 and Ep2 were both "addictive algorithms" with the same kid, same locations, same melancholy; the director's verdict: "way too similar — we have the entire world of creativity." Recurring style/character lore is a seasoning, not the meal. When pitching episode ideas, explicitly check the pitch against every previous episode's topic and theme; anything in the same thematic neighborhood gets reworked or cut. (Director rule, 2026-08-19.)
+7. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
 
 ## Workflow
 
