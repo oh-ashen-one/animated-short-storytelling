@@ -17,11 +17,11 @@ The goal: any agent (or human) can pick this up in a fresh session and produce a
 
 ## Current toolchain
 
-The skill is generator-agnostic, but the logged production experience uses:
+**Video generation is MiniMax H3 only, via MiniMax's official pay-as-you-go API, at 768P.** Never Higgsfield for video. Never 2K. Never H3-Regenerate-2K.
 
-- **Higgsfield CLI** (`npm i -g @higgsfield/cli`) — access to many video/image models through one CLI
-- **MiniMax H3** (`minimax_h3`) — anime-capable video model, 2K, up to 15s per clip
-- **Nano Banana 2** (`nano_banana_2`) — character reference sheets
+- **MiniMax-H3 (official API)** — `https://api.minimax.io`, docs at [platform.minimax.io](https://platform.minimax.io/docs/api-reference/video-generation-v2-create). Model `MiniMax-H3`, resolution `768P`, 4–15s per clip, native audio. Auth: env `MINIMAX_API_KEY` (pay-as-you-go). Never commit the key.
+- Prompt enhancement is allowed (stronger camera/light/performance, optional H3-Context-IR) as long as the user's vibe and intent stay the same.
+- **Nano Banana 2** — character reference sheets / stills only, not video.
 
 ## Contributing / evolving this skill
 
