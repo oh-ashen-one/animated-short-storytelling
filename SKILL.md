@@ -25,6 +25,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 9. **Episodes must be creatively distinct.** Not just a new script — a new TOPIC, world, cast, and emotional register. Ep1 and Ep2 were both "addictive algorithms" with the same kid, same locations, same melancholy; the director's verdict: "way too similar — we have the entire world of creativity." Recurring style/character lore is a seasoning, not the meal. When pitching episode ideas, explicitly check the pitch against every previous episode's topic and theme; anything in the same thematic neighborhood gets reworked or cut. (Director rule, 2026-08-19.)
 10. **Exploit the medium — go mythical/surreal when the shot allows it.** We are not bound to documentary realism: if a shot (especially a closer) can carry an impossible image — data-fireflies rising off wet lawns, a sky-whale, frozen glass water — prefer it over a "normal human thing." One mythic element per shot, anchored in the scene's reality, never a random fantasy pile-on. Put it FIRST and BIG in the prompt — as one clause in a long prompt H3 sheds it and it never renders. And keep it SUBTLE on screen (director on the sky-whale take: "more subtle next time"). (Director rule, 2026-08-19.)
 11. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
+12. **Official MiniMax API only, 768P only.** All video generation is MiniMax-H3 via MiniMax's own pay-as-you-go API (`https://api.minimax.io`) only. Never Higgsfield or any reseller for video. Never 2K, never H3-Regenerate-2K. Direct API is $0.08/sec at 768P vs $0.13/sec at 2K vs ~$0.19–0.20/sec on Higgsfield. Prompt enhancement and optional Context-IR are OK if vibe/intent stay the same. Key is env `MINIMAX_API_KEY` (pay-as-you-go). Never commit it. Do not offer 2K as an option.
 
 ## Workflow
 
@@ -54,7 +55,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 - **One sheet per STYLE, not per film.** If the style anchor changes medium (2D cel → 3D low-poly), regenerate the sheet in the new medium. A 2D sheet anchoring 3D shots is untested and likely counterproductive.
 - **Age-drift guard:** models age characters up by default. If the character is a child, prompt it explicitly in the sheet AND every shot: "young kid proportions, oversized head, short stature". Verified fix for a grown-man-reading character in low-poly 3D.
 - Lock a simple, distinctive outfit in the sheet prompt (specific colors). Every later prompt references the same outfit words.
-- Pass the sheet as an image reference on EVERY shot (`--image <sheet>` with the Higgsfield CLI). Verified: keeps the character on-model across shots. Note: sheet-referenced shots drift slightly cleaner/smoother than the raw style test — if you want maximum grit, push the texture words harder when a sheet is attached.
+- Pass the sheet as an image reference on EVERY shot (`--ref <sheet>` on `h3.sh` / the official MiniMax API). Verified: keeps the character on-model across shots. Note: sheet-referenced shots drift slightly cleaner/smoother than the raw style test — if you want maximum grit, push the texture words harder when a sheet is attached.
 - Do NOT use the sheet as a start/frame image — it's a reference, not a first frame. If a shot needs a specific first frame, generate a dedicated keyframe image for that shot.
 - **Age arcs: one sheet per AGE, same outfit.** A character who is a kid in early shots and an adult later gets two sheets (kid proportions + adult proportions) in the same style with identical outfit colors and one carryover feature (e.g. round glasses). The match-cut between the last kid shot and the first adult shot sells the years. (Verified in Ep4 — zero drift across the age jump.)
 
@@ -108,23 +109,25 @@ When a film wraps, ship a public "how I made it" page on Notion. The community p
 
 ## Model reference — MiniMax direct API (ALL video gen, 768P standard)
 
-**House rule (director, 2026-08-19): every video generation goes through MiniMax's direct pay-as-you-go API at 768P. No Higgsfield video. 2K is reserved for photoreal styles only (explicit override) — for low-poly/retro-game looks, 2K's extra detail is invisible at delivery size and costs 62% more.** Direct API costs **$0.08/sec at 768P** ($0.13/sec at 2K) — vs ~$0.19–0.20/sec equivalent through Higgsfield credits. Reference images: first 5 free per generation, $0.04 each after. Key lives in `~/.config/shorts-factory/.env` as `MINIMAX_API_KEY`; the API key is the pay-as-you-go kind — **Token Plan subscriptions and prepaid Credits do NOT cover H3 video**. Note: 768P vertical renders 768×1344 (7:4, ~2% wider than 9:16) — crop/pad at assembly.
+**House rule (director, 2026-08-27): every video generation is MiniMax-H3 via the official MiniMax API (`https://api.minimax.io`) at 768P. No Higgsfield video. No 2K. No H3-Regenerate-2K. No photoreal 2K override.** Prompt enhancement and optional Context-IR are OK if vibe/intent stay the same. Direct API is **$0.08/sec at 768P** vs $0.13/sec at 2K vs ~$0.19–0.20/sec on Higgsfield. Reference images: first 5 free per generation, $0.04 each after. Key is env `MINIMAX_API_KEY` (pay-as-you-go). Never commit it. Token Plan subscriptions and prepaid Credits do NOT cover H3 video. Note: 768P vertical renders 768×1344 (7:4, ~2% wider than 9:16) — crop/pad at assembly.
 
 Wrapper: `~/shorts-factory/h3.sh` (submit → poll → download, bash + curl + python3):
 
-- `h3.sh gen --prompt-file .prompt-01.txt --out shot-01.mp4 --duration 5 --ratio 9:16 --ref <sheet>` — resolution defaults to 768P; `--resolution 2K` for photoreal overrides (prints a warning).
+- `h3.sh gen --prompt-file .prompt-01.txt --out shot-01.mp4 --duration 5 --ratio 9:16 --ref <sheet>` — resolution is locked to 768P.
 - `--ref` / `--first-frame` / `--last-frame` accept a local path (auto-uploaded), an `mm_file://<file_id>`, or an https URL. Character sheets go in as `role=reference_image`.
 - `h3.sh upload <file>` → prints a `file_id` (uploads valid 7 days, image sides 256–5760px). Reference as `mm_file://<file_id>`.
 - `h3.sh status <task_id>`; `gen --async` submits and returns the task_id without waiting (for wave-of-4 batching).
 - Raw endpoints: `POST /v2/video_generation` (multimodal `content[]` array — H3 rejects the v1 endpoint), `GET /v2/query/video_generation/<task_id>` (success → `task.content.url` is the download link directly), `POST /v1/files/upload` with `purpose=video_generation_input`.
-- Duration 4–15s int, resolution 768P|2K. Ratio: required for text-to-video; with image inputs the API DEFAULTS to adapting to the ref's aspect — always send the delivery ratio explicitly (a landscape sheet + `ratio: 9:16` returns 1440×2560, verified). Omit only with first/last-frame keyframes. 4s works fine on the direct API (unlike Higgsfield's 4s failures).
+- Duration 4–15s int, resolution 768P only. Ratio: required for text-to-video; with image inputs the API DEFAULTS to adapting to the ref's aspect — always send the delivery ratio explicitly (a landscape sheet + `ratio: 9:16` returns 1440×2560, verified). Omit only with first/last-frame keyframes. 4s works fine on the direct API (unlike Higgsfield's 4s failures).
 - Task list endpoint covers the last 7 days (`task_type=generation`) — that's the Phase 8 prompt-recovery path for direct-API films.
 
 ## Model reference — Higgsfield CLI
 
 Install: `npm i -g @higgsfield/cli`, auth: `higgsfield auth login`, then select a billing workspace first (`higgsfield workspace list` / `workspace set <id>`) — cost and generate calls fail without one.
 
-### MiniMax H3 (`minimax_h3`) — anime-capable video (legacy path, superseded by direct API)
+### MiniMax H3 (`minimax_h3`) — **DO NOT USE for video**
+
+Superseded by official MiniMax API at 768P; Higgsfield H3 is 2K-only and ~2.5× the cost.
 
 - Resolution: **2K only**. Aspect ratios: auto, 21:9, 16:9, 4:3, 1:1, 3:4, 9:16.
 - Duration: integer seconds, **5–15** usable (schema says ≥4 but a 4s batch failed 3/3 server-side while 5s+ succeeded — avoid 4).
@@ -133,7 +136,7 @@ Install: `npm i -g @higgsfield/cli`, auth: `higgsfield auth login`, then select 
 - Discovery: `higgsfield model get minimax_h3 --json`. The schema omits min/max for duration — probe limits with `higgsfield generate cost <model> --duration N` (free) instead of burning a generation.
 - Generate: `higgsfield generate create minimax_h3 --prompt "..." --image sheet.png --duration 10 --aspect_ratio 16:9 --resolution 2K --wait --wait-timeout 20m`
 
-### Nano Banana 2 (`nano_banana_2`) — character sheets / reference images
+### Nano Banana 2 (`nano_banana_2`) — character sheets / stills only
 
 - Produces excellent production-style turnaround sheets (front/side/back + portrait + palette swatches) from a single prompt. Occasional transient HTTP 503 — just retry.
 
