@@ -26,6 +26,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 10. **Exploit the medium — go mythical/surreal when the shot allows it.** We are not bound to documentary realism: if a shot (especially a closer) can carry an impossible image — data-fireflies rising off wet lawns, a sky-whale, frozen glass water — prefer it over a "normal human thing." One mythic element per shot, anchored in the scene's reality, never a random fantasy pile-on. Put it FIRST and BIG in the prompt — as one clause in a long prompt H3 sheds it and it never renders. And keep it SUBTLE on screen (director on the sky-whale take: "more subtle next time"). (Director rule, 2026-08-19.)
 11. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
 12. **Official MiniMax API only, 768P only.** All video generation is MiniMax-H3 via MiniMax's own pay-as-you-go API (`https://api.minimax.io`) only. Never Higgsfield or any reseller for video. Never 2K, never H3-Regenerate-2K. Direct API is $0.08/sec at 768P vs $0.13/sec at 2K vs ~$0.19–0.20/sec on Higgsfield. Prompt enhancement and optional Context-IR are OK if vibe/intent stay the same. Key is env `MINIMAX_API_KEY` (pay-as-you-go). Never commit it. Do not offer 2K as an option.
+13. **Cast lock, scale, and talking-head grammar (Office / live-action, 2026-08-27).** If the director supplies character stills, those ARE the identity lock — pass them as `role=reference_image`. Do not substitute Wikimedia actor photos or MiniMax image-01 / image-01-live restyles (they strip celebrity faces into generic guys or pretty-boy illustrations). Prompt EXACTLY N people, no extras, no clones, no duplicate of either character, matching adult height. Do not start a two-shot on a locked-off staring portrait of one character (that extra becomes a clone when the real one enters). Office mockumentary is A-roll yelling → cut to talking-head in the interview chair → cut back to A-roll yelling; shoot those as SEPARATE clips and concat in ffmpeg — one 15s clip covering two locations spawned a clone. Dense ML jargon in a single 15s take comes out chipmunk with flapping mouths; shorter lines, slow pace. Deliver the mp4 the moment the job succeeds — do not wait for a ping.
 
 ## Workflow
 
@@ -147,7 +148,7 @@ Distilled from the best public work: jnMetaCode/ai-shortfilm-prompts, OSideMedia
 ### Prompt anatomy (H3-native)
 
 Per-shot prompt = **shot size + composition → subject (locked description) → ONE action beat in sequential verbs (setup → action → landing) → ONE camera move in its own sentence → named physical light source + locked palette block → style suffix → "One continuous take, no cuts." + "No score. Production audio only."**
-- H3 cuts between shots by default — "one continuous take, no cuts" is mandatory.
+- H3 cuts between shots by default — "one continuous take, no cuts" is mandatory per CLIP. Exception: Office mockumentary talking-head grammar is assembled in the edit from separate clips (see Office mockumentary). Do not ask a single clip to cut locations.
 - H3 does NOT support the legacy Hailuo `[bracket]` camera commands — natural-language camera direction only.
 - ~150–200 words per prompt is the sweet spot; walls of adjectives dilute.
 
@@ -182,6 +183,33 @@ Per-shot prompt = **shot size + composition → subject (locked description) →
 - **Props:** name them concretely ("black smartphone"). Vague props drift — "glowing phone" came back as a laptop-like slab.
 - Mood words do heavy lifting in dialogue-free films: "melancholic", "lonely", "bittersweet".
 - Ending a shot "on" something (a face, an object) gives the edit a clean cut point.
+
+## Office mockumentary (2026-08-27)
+
+Lessons from the Dwight vs Michael (Fable 5 vs GLM 5.3) retakes. Keep the yelling energy; kill the slop.
+
+### What not to do
+- Don't identity-lock off red-carpet actor photos or image-01 restyles. MiniMax stills strip the face. Use the director's character stills.
+- Don't leave cast count implicit. A "two coworkers" 15s take spawned a murderer-stare Dwight at frame 0 AND a second Dwight walking in at ~8s, plus a scale mismatch.
+- Don't freeze one character staring into camera as a background extra in a two-shot.
+- Don't ask one H3 clip to do two locations (reception fight AND interview chair). It invents extras.
+- Don't pack four dense jargon lines into 15s. Audio goes chipmunk, lips don't match.
+- Don't wait for the director to ask "lmk" / "?" after a render. Send the file when it lands.
+- Don't invent a beige conference room when the director attached the reception (curved wood-grain desk, TEAMWORK poster, grey carpet).
+- Don't let poster text misspell. Write TEAMWORK spelled out.
+- Don't use square glasses or a side part for Dwight when the still is silver double-bridge aviators and a middle part with bangs on the forehead.
+- Don't put Michael in an olive shirt when the still is a navy pinstripe suit, white shirt, patterned tie.
+
+### Best practices
+- Pass director stills as `role=reference_image` (character sheets + set still). Describe likeness in text, never celebrity names.
+- Hard prompt: `EXACTLY two people. No extras. No clones. No duplicate of either man. Both the same adult height, standing, normal human scale.`
+- Office grammar = three clips, then ffmpeg concat:
+  1. A-roll at the reception, them yelling (keep that energy).
+  2. Talking-head: ONE person in the interview chair, looking at the documentary camera, dry line.
+  3. A-roll back at the reception, them still yelling.
+- Each clip stays "one continuous take, no cuts." The SHOW'S cuts happen in the edit.
+- Speech: slow, tired, natural pace, pause between sentences, do not raise pitch. Model names (Fable 5, GLM 5.3) go in `<d>` if that's the joke.
+- 768P official API only. $0.08/sec. A 6s+4s+5s package is ~$1.20.
 
 ## Evolving this skill
 
