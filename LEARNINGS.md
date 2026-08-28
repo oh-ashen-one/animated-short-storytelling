@@ -4,6 +4,53 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-08-27/28 — PRODUCTION: Office mockumentary AI-debate shorts (Michael vs Dwight)
+
+### Entry 39 — Office H3 singles grammar locked; Jim two-shot and numeral-dump rejects — ~$0.80/10s clip
+
+Live-action 9:16 Office mockumentary of Dwight arguing local/Chinese/open-weight models vs Michael arguing American cloud (Claude $20). Native H3 speech. Official MiniMax-H3, 768P, 8–10s singles, concat in ffmpeg. ~$0.80 per 10s clip.
+
+**GOOD**
+- One face per generation. Singles cut like the show; two-shots did not.
+- FRAME ZERO already a whip pan onto the face, then a short zoom, then settle. A still establishing frame was a reject.
+- Separate rooms: Michael in the manager office, Dwight at his own cubicle. Both at the sage-green reception desk read as the same place.
+- Slow passion, not scream/chipmunk. Pause between sentences. Fill the 10s.
+- Explicit voice lock. Without it, Dwight didn't sound like Dwight and Michael drifted toward Andy Bernard.
+- Conversational nerdy lines with one name-drop in the moment (DeepSWE 63.4 / Terminal-Bench 84.3 / supposedly smarter than Claude Opus 5 on MMLU), not an essay and not a numeral dump.
+- Michael says the locked Jim lines word for word after the recast. Do not "make it more Michael."
+- Fuller Michael line in HIS office ("Okay. Hold on. What are you even asking...") instead of a moan then "that's weird."
+- Director stills as `role=reference_image` plus wardrobe/hair/glasses in the prompt. CAST LOCK: exactly one person, adult scale.
+- Send each mp4 the moment the job succeeds. Director should never have to ask.
+- v5 talking-head confessional remains the gold for interview coverage (separate grammar from argument singles).
+- Ghost of Tsushima title plate: locked tripod, ambient-only motion, menu text from frame 0, no left scrim. PS5 grade of 768p rejected; keep original plate.
+
+**BAD / do not repeat**
+- v1–v3: slop. v4 fight okay, confessional worse than v5.
+- Jim vs Dwight two-shot: Jim looks nothing like Jim (episode screenshots did not lock identity), both far too angry. 1027 `output new_sensitive` on celebrity close-ups. Do not reshoot Jim until better stills.
+- v8 two-shot first 10s: shit. Two people in one H3 clip cloned / genericized.
+- Starting locked-off then moving later.
+- Putting both characters at the reception desk.
+- Rushing Dwight; repeating the GLM/DeepSWE/Terminal-Bench open in a later clip.
+- Open-weight numeral dump ("262k context. JobBench 55.7. That's 19 points over Opus.") — H3 said "262" not "two hundred sixty two thousand." Felt like random stats. Replacement locked line: local / Uncle Sam / Virginia / Qwen 3.8 Flash Next on a five hundred twelve gigabyte Mac Studio on the desk. Write numbers as full spoken words.
+- Michael moaning / swallowing the line. Reinforce SLOW. Clear. Every word.
+- Essay-like / press-release dialogue. Must sound like overlapping real conversation.
+- MiniMax image-01 hypebeast stills from a tight MCU headshot → bobblehead. Director killed stills; stick to H3 video.
+- Waiting to be pinged after a render.
+- Punching up locked spoken lines or submitting refs unseen.
+- 2K / Higgsfield video / third-party H3 proxies.
+
+**Director ranking:** v5 confessional perfect. v8 singles much better; Michael Kimi/70k and Dwight "loser with an API key" were the bar. Voice retakes of the GLM open + propaganda lines were fine once voice was specified.
+
+**Reproduce:** official `POST /v2/video_generation` at 768P/9:16/10s, one `role=reference_image`, spoken line in `<d>[English] ...</d>`, whip-pan camera block, location split, voice lock, numbers as words, concat keepers.
+
+---
+## 2026-08-27 — HOUSE RULE: official MiniMax API + 768P only
+
+### Entry 38 — Director locked official MiniMax API at 768P; 2K and Higgsfield video forbidden — no spend
+Director locked all video generation to **MiniMax-H3** via the official MiniMax API (`https://api.minimax.io`) at **768P only**. Higgsfield is not used for video. 2K, H3-Regenerate-2K, and any photoreal 2K override are forbidden. Prompt enhancement and optional Context-IR are OK if vibe/intent stay the same. Direct API is $0.08/sec at 768P vs $0.13/sec at 2K vs ~$0.19–0.20/sec on Higgsfield. Character sheets still via Nano Banana 2; pass sheets as `--ref` on `h3.sh`. Key lives in env `MINIMAX_API_KEY` — never commit it.
+
+---
+
 ## 2026-08-20 — PRODUCTION: Episode 4 "Corn" (65.75s, PS1 dither)
 
 ### Entry 37 — Ep4 full production, first ZERO-retake run — $6.48 cash + ~4cr sheets
