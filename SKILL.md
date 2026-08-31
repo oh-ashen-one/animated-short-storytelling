@@ -27,6 +27,8 @@ A production workflow for making coherent animated shorts from text-to-video mod
 11. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
 12. **fal.ai MiniMax H3 Max only, 768P only.** All video generation is fal's post-trained H3 Max (`minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`) at **768P**. There is no 720p on Max (native is 480P or 768P; lock 768P). Never official MiniMax (`api.minimax.io`), never FAL base H3 (`minimax/h3/*`), never Higgsfield, never 2K/4K/480P, never H3-Regenerate-2K. Identity stills = image-to-video first frame (Max has no reference-to-video yet). Launch promo $0.04/sec at 768P until 2026-09-01, then $0.08/sec. Key is env `FAL_KEY`. Never commit it.
 
+13. **Grok Imagine is a second pipeline, never mixed with H3.** Contest films and grok.com Imagine shorts do not go through fal/MiniMax. H3 clips DQed for the Odyssey contest. Imagine stills/video/voices only. CapCut stitch is legal. Suno is score only. No celebrity likeness on Imagine contest work (overrides golden rule 5).
+
 ## Workflow
 
 ### Phase 1 — Concept & constraints
@@ -216,6 +218,50 @@ Per-shot prompt = **shot size + composition → subject (locked description) →
 - **Props:** name them concretely ("black smartphone"). Vague props drift — "glowing phone" came back as a laptop-like slab.
 - Mood words do heavy lifting in dialogue-free films: "melancholic", "lonely", "bittersweet".
 - Ending a shot "on" something (a face, an object) gives the edit a clean cut point.
+
+
+## Grok Imagine (Odyssey contest + Imagine compilations, locked 2026-08-31)
+
+A **separate camera** from H3. Do not generate Imagine shots on fal. Do not generate H3 shots for the Odyssey contest.
+
+### Contest rules (re-read before generating)
+
+- Quote the official Grok post. Follow @grok and @imagine. US 18+.
+- Closes 11:59pm PT Mon Aug 31, 2026 (= 1:59am CT Tue Sep 1).
+- 3–5 min. ≥1 min English dialogue. Grok Imagine for video, images, **and character voices**.
+- CapCut for edit/stitch is legal. Suno for **score only**, cite it. No ElevenLabs, no H3, no MiniMax, no fal for picture or speech.
+- No celebrity, no porn/hate, no competitor products. X can audit Imagine logs.
+- Ranking is Verified Premium Home Timeline impressions, then quality. Public impression counts can be farmed. Craft bar is watch-through (Huff Circe), not farmed #1.
+
+### Production lock
+
+- Consumer: grok.com/imagine on the director's Grok sub. Cursor credits do not buy Imagine video. Chat GenerateImage is **stills/boards only**, not contest footage.
+- Chat often cannot play mp4s. Send the grok.com Imagine post link plus the file.
+- **One Imagine generate at a time.** Do not click Regenerate. Extra clicks burn the sub. Director 2026-08-31: relax, stop wasting credits.
+- Clip length: 6 / 10 / 15s. Extend can chain to ~30s; faces melt. Prefer a new approved still + I2V over Extend.
+- Pipeline: **character turnaround first** (front/left/right/back) for every new face → **multi-panel storyboard page** (header + 2×2 frames + camera notes, not one collage) → director locks the first-frame still → **one** I2V → CapCut. VO over cuts. Mouths closed on picture unless a talking clip is worth it.
+- Settings: Video, 720p, 16:9, Custom, **No music** on the generate. Suno later under the cut.
+- I2V prompt craft (from GitHub + tests): action in the first 20 words, one camera move, named lens, named light, physics language. Never "cinematic / 4K / epic".
+- Style suffix / look lock (pig-hook V1, 2026-08-31): dark contrast, torch-warm blacks, heavy grain, dust, scratches, faded warm, slightly underexposed, 16mm weave.
+
+### Cast (Odyssey reel)
+
+- Odysseus: handsome ~34 original face. Lost/dirty costume for the voyage. Cleaned-up home costume for the door/bed. Not a celebrity.
+- New characters (Cyclops, Scylla, Circe, Penelope) get their own turnaround **before** they appear on a scene board.
+
+### Pig open (in progress 2026-08-31)
+
+- First-frame still: Circe's hands on a screaming sailor who is still human (not already a pig).
+- 6s look-test: **keep** grade/audio/grain. **kill** the motion (frozen, no morph). Usable as a 2–3s scream open. Do not Extend it to 30s.
+- Next keeper: one 10s I2V, same still, hands dragging the face, **slow human-to-pig morph**, locked-off, no music.
+
+### First minute after pigs (15s boards)
+
+1. Cyclops eye — CU then slow pull back, him tiny, no fight.
+2. Mast / sirens — lashed, wax in ears, no mermaids in frame.
+3. Scylla wide — necks, one empty bench, no melee.
+
+Then later: Calypso → beggar door → Argos (10s) → olive bed (home costume) → hold.
 
 ## Evolving this skill
 

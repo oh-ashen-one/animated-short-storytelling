@@ -4,6 +4,28 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-08-31 — PRODUCTION: Grok Imagine × Odyssey contest reel
+
+### Entry 41 — Imagine still-then-I2V; one generate; vibe lock; no Extend — MIXED
+
+Contest film on grok.com Imagine only (H3/fal = DQ). Director locked a 3-min gist (not a compressed Odyssey) with Huff-like 1950s grain, VO over picture, CapCut + later Suno.
+
+**GOOD**
+- Character turnaround (front/left/right/back) before the character appears. Odysseus has two costumes: lost/dirty for the voyage, cleaned-up for home.
+- Storyboards are multi-panel pages with camera notes, not one contact-sheet collage.
+- Approve the first-frame still, then one I2V. Chat GenerateImage is boards only.
+- Pig-hook 6s I2V held identity, locked-off camera, no extra fingers, no music, strong dark grade + scream audio. That grade is the look lock for the whole film.
+- Chat often cannot play mp4s; grok.com Imagine post links play.
+
+**BAD / do not repeat**
+- Do not fire multiple Imagine generates hunting a download or a better take. Director: wasting credits. One generate. Do not click Regenerate.
+- Prompting "he does not become a pig" on the pig-open produced a frozen cinemagraph. Need hands working the face and a slow human-to-pig morph. Same still, new prompt, one 10s take — do not Extend the frozen 6s to 30s.
+- grok.com Imagine on the bot computer is a different session from this chat. Sign-in is one-time. Cursor credits do not buy Imagine video.
+- Farmed impression counts (huge impressions, ~400 views) are not the craft model. Watch-through is.
+
+**Lesson:** Imagine contest is a second pipeline in this repo. Never mix it with fal H3 Max. Update this file after every keeper/fail without waiting to be asked.
+
+
 ## 2026-08-29 — HOUSE RULE: fal.ai MiniMax H3 Max at 768P only
 
 ### Entry 40 — Swap off official MiniMax onto fal H3 Max 768P — no spend
