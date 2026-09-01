@@ -7,6 +7,7 @@ The goal: any agent (or human) can pick this up in a fresh session and produce a
 ## What this is
 
 - **`SKILL.md`** — the skill itself. Load it into any skill-compatible agent (Claude Code, Kimi Code, Codex, Cursor, etc.) or just read it. Contains the full production workflow, model reference, cost math, and prompting patterns.
+- **`GROK-IMAGINE-ODYSSEY.md`** — Grok Imagine / Odyssey contest look lock, prompt craft, and 2026-08-31 failure notes. Not FAL H3.
 - **`LEARNINGS.md`** — the production log. Every generation session appends dated, scored lessons: what was generated, which model, what it cost, whether the result was good or bad, and why.
 
 ## Quick start
