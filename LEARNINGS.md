@@ -6,6 +6,26 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ## 2026-08-31 — PRODUCTION: Grok Imagine × Odyssey contest reel
 
+### Entry 42 — Odyssey Imagine failures from 2026-08-31 session — BAD
+
+Full notes: [`GROK-IMAGINE-ODYSSEY.md`](GROK-IMAGINE-ODYSSEY.md). Contest reel on grok.com Imagine only — this is **not** FAL H3; do not mix pipelines.
+
+**Failures (never repeat)**
+- 4-panel board as I2V first frame → slideshow, post `8dc38314`
+- Anime / pixel R2V → unmatched slop
+- Mini-screenplay timestamps → over-specified, weak
+- Short prompt with no event → dead rowing clip
+- “one wet glass eye” → jargon, ashen hated it
+- “dirty armored men” → wrong period
+- One-man skiff on ocean → wrong scale; need full galley + ~30 crew
+- One still as only R2V ref for a chase → melt, 180° flip, two-eyed giant, post `008c1f66`
+- “Straining in rain” mast prompt → Odysseus screams at crew, men walk in water, post `04fa6823`
+- Sat on compose after yes → ashen furious; click that turn
+- Still generate aborted then stopped → retry immediately
+- Shipped an unwatchable mp4 without watching it
+
+**Lesson:** Use `GROK-IMAGINE-ODYSSEY.md` for look lock, period/cast, Imagine feed rules, and prompt craft. Do not repeat the failures above.
+
 ### Entry 41 — Imagine still-then-I2V; one generate; vibe lock; no Extend — MIXED
 
 Contest film on grok.com Imagine only (H3/fal = DQ). Director locked a 3-min gist (not a compressed Odyssey) with Huff-like 1950s grain, VO over picture, CapCut + later Suno.
