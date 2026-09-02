@@ -25,7 +25,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 9. **Episodes must be creatively distinct.** Not just a new script — a new TOPIC, world, cast, and emotional register. Ep1 and Ep2 were both "addictive algorithms" with the same kid, same locations, same melancholy; the director's verdict: "way too similar — we have the entire world of creativity." Recurring style/character lore is a seasoning, not the meal. When pitching episode ideas, explicitly check the pitch against every previous episode's topic and theme; anything in the same thematic neighborhood gets reworked or cut. (Director rule, 2026-08-19.)
 10. **Exploit the medium — go mythical/surreal when the shot allows it.** We are not bound to documentary realism: if a shot (especially a closer) can carry an impossible image — data-fireflies rising off wet lawns, a sky-whale, frozen glass water — prefer it over a "normal human thing." One mythic element per shot, anchored in the scene's reality, never a random fantasy pile-on. Put it FIRST and BIG in the prompt — as one clause in a long prompt H3 sheds it and it never renders. And keep it SUBTLE on screen (director on the sky-whale take: "more subtle next time"). (Director rule, 2026-08-19.)
 11. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
-12. **fal.ai MiniMax H3 Max only, 768P only.** All video generation is fal's post-trained H3 Max (`minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`) at **768P**. There is no 720p on Max (native is 480P or 768P; lock 768P). Never official MiniMax (`api.minimax.io`), never FAL base H3 (`minimax/h3/*`), never Higgsfield, never 2K/4K/480P, never H3-Regenerate-2K. Identity stills = image-to-video first frame (Max has no reference-to-video yet). Launch promo $0.04/sec at 768P until 2026-09-01, then $0.08/sec. Key is env `FAL_KEY`. Never commit it.
+12. **fal.ai MiniMax H3 Max only, 768P only.** All video generation is fal's post-trained H3 Max (`minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`) at **768P**. There is no 720p on Max (native is 480P or 768P; lock 768P). Never official MiniMax (`api.minimax.io`), never FAL base H3 (`minimax/h3/*`), never Higgsfield, never 2K/4K/480P, never H3-Regenerate-2K. Identity stills = image-to-video first frame (Max has no reference-to-video yet). Live fal docs as of 2026-09-01: **$0.02/sec at 768P**, $0.0125/sec at 480P. Never generate 480P unless asked. Key is env `FAL_KEY`. Never commit it.
 
 13. **Grok Imagine is a second pipeline, never mixed with H3.** Contest films and grok.com Imagine shorts do not go through fal/MiniMax. H3 clips DQed for the Odyssey contest. Imagine stills/video/voices only. CapCut stitch is legal. Suno is score only. No celebrity likeness on Imagine contest work (overrides golden rule 5).
 
@@ -143,9 +143,32 @@ A second tested genre besides the retro-game VO films. 9:16 talking-head / A-rol
 
 **Title-plate overlay (Ghost of Tsushima test, same session):** locked-tripod ambient loop; overlay menu text from frame 0 with no fade; text only, no left-side darkness/scrim. A "more PS5" grade of the 768p source was rejected.
 
+## Variety shorts vs @lucamaxiim (locked 2026-09-02)
+
+Ashen studied Instagram @lucamaxiim as a reference. We are **not** cloning him. We make a variety of random cool animated shorts on fal.ai MiniMax H3 Max 768P. His clothing-brand CTA is not ours. Ours is a Skool community, always "link in bio."
+
+**STEAL** (ingredients — mix differently every time):
+- Obscure specific details (Fiat 500 with four dents; a 2003 Passat driven by a guy named Ethan; a handwritten note from a watchmaker named Wei). The joke lives in the dumb detail.
+- Fake institutions that sound real. Invent a NEW one per video. Never reuse his proper nouns.
+- Original meme-line splices (his Fight Club splice is his). Write new ones. Do not repeat his line.
+- Picture that does not match the essay. Generated 3D / jank / crash-slop. VO is the point.
+- 2–4 word center karaoke captions, white bold fragments, not a subtitle dump.
+- Bait then punch. His punch is merch. Ours is never merch.
+- ~22–40s, fast 1–2s cuts.
+
+**NEVER**
+- His bored / flat / tired narrator cadence. Performance changes per short (hype, sincere, pissed, conspiratorial, tender, theatrical). Variety is the lock. If two in a row could be mistaken for lucamaxiim, rewrite.
+- His truck-flag essay skeleton (we all know that one guy / named nobody / fake org / merch) as a clone template.
+- His characters/merch: Dante, Skebob, Children of Khan, fish tee, childrenofkhan.com.
+- The proper noun "Azerbaijan Technology". The type of joke is fair. The name is his.
+- Clothing CTAs. There is no clothing brand.
+
+**OURS**
+- Last beat always points at the Skool community via Instagram bio. Rotate: "Learn how we make these videos" / "Learn how to use AI" / "Learn how to make not AI slop" / "Learn how to use AI to make actually good stuff" then "Link in bio."
+
 ## Model reference — MiniMax direct API (ALL video gen, 768P standard)
 
-**House rule (director, 2026-08-29): every video generation is fal.ai MiniMax H3 Max at 768P.** Endpoints `minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`. No official MiniMax. No FAL base H3. No Higgsfield. No 2K/4K/480P. No 720p (Max does not offer it). Identity stills are image-to-video first frames. Promo **$0.04/sec at 768P until 2026-09-01**, then $0.08/sec. Key is env `FAL_KEY`. Never commit it. A 5s 768p clip renders in under 3 seconds on Max.
+**House rule (director, 2026-08-29): every video generation is fal.ai MiniMax H3 Max at 768P.** Endpoints `minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`. No official MiniMax. No FAL base H3. No Higgsfield. No 2K/4K/480P. No 720p (Max does not offer it). Identity stills are image-to-video first frames. Live fal docs as of 2026-09-01: **$0.02/sec at 768P**, $0.0125/sec at 480P. Never generate 480P unless asked. Key is env `FAL_KEY`. Never commit it. A 5s 768p clip renders in under 3 seconds on Max.
 
 Wrapper: `~/shorts-factory/h3.sh` (submit → poll → download, bash + curl + python3):
 
