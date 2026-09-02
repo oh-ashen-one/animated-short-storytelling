@@ -4,6 +4,37 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-09-02 — REFERENCE LOCK: @lucamaxiim study (steal vs never)
+
+### Entry 43 — Variety shorts: steal ingredients, never clone; fal H3 Max 768P price correction — no spend
+
+Ashen studied Instagram @lucamaxiim as a reference, then locked: we are **not** cloning him. We make a variety of random cool animated shorts on fal.ai MiniMax H3 Max 768P. His clothing-brand CTA is not ours. Ours is a Skool community, always "link in bio." Full production lock is in `SKILL.md`.
+
+**STEAL** (ingredients, mix differently every time)
+- Obscure specific details (Fiat 500 with four dents; a 2003 Passat driven by a guy named Ethan; a handwritten note from a watchmaker named Wei). Joke lives in the dumb detail.
+- Fake institutions that sound real ("Azerbaijan Technology" works as country+corp that should not exist). Invent a NEW one per video. Never reuse his proper nouns.
+- Meme lines that should not be in the video ("You met me at a very Chinese time in my life" is a Fight Club splice). Write original splices. Do not repeat his line.
+- Picture that does not match the essay. Generated 3D / jank / crash-slop. VO is the point.
+- 2–4 word center karaoke captions, white bold fragments, not a subtitle dump.
+- Bait then punch. His punch is merch. Ours is never merch.
+- ~22–40s, fast 1–2s cuts.
+
+**NEVER**
+- His bored / flat / tired narrator cadence. Performance should change per short (hype, sincere, pissed, conspiratorial, tender, theatrical). Variety is the lock. If two in a row could be mistaken for lucamaxiim, rewrite.
+- His truck-flag essay skeleton (we all know that one guy / named nobody / fake org / merch) as a clone template.
+- His characters/merch: Dante, Skebob, Children of Khan, fish tee, childrenofkhan.com.
+- The proper noun "Azerbaijan Technology". The type of joke is fair. The name is his.
+- Clothing CTAs. There is no clothing brand.
+
+**OURS**
+- Last beat always points at the Skool community via Instagram bio. Rotate: "Learn how we make these videos" / "Learn how to use AI" / "Learn how to make not AI slop" / "Learn how to use AI to make actually good stuff" then "Link in bio."
+
+**Price correction (live fal docs, 2026-09-01):** H3 Max is **$0.02/sec at 768P**, $0.0125/sec at 480P. The old $0.04-then-$0.08 launch line in SKILL.md is stale. Still never generate 480P unless asked. House lock unchanged: fal H3 Max only, 768P, never official MiniMax, never base H3, never 2K/4K.
+
+**Lesson:** Study him for ingredients. Mix them differently every time. Variety is the lock. Do not name a new product line.
+
+---
+
 ## 2026-08-31 — PRODUCTION: Grok Imagine × Odyssey contest reel
 
 ### Entry 42 — Odyssey Imagine failures from 2026-08-31 session — BAD
