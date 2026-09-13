@@ -4,6 +4,10 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-09-13 — Pixel dialogue rejected; alternative style exploration
+Director judged the ten-second Bran/Night King pixel conversation unsatisfactory and requested alternative animation-style images. Produced three built-in ImageGen portrait stills of the same two-character meeting for comparison: early-2000s PS2 low-poly 3D, hand-drawn fantasy cel animation, gothic stop-motion puppets. These are still-image proposals only: no alternative-style video generated, no new style approved, and no claim of proven motion fidelity. Keep the current dialogue and scene available while the director selects the next visual direction. Do not assume pixel style remains locked after this feedback.
+
+
 ## 2026-09-13 — Director rejects restart; ten-second dialogue coverage
 **BAD:** director rejected the fifteen-second opener for loss of pixel style and incorrect Jon appearance. Text-only casting of a newly introduced character did not preserve identity. Do not reuse this take as a character anchor.
 **New direction:** ten seconds at a time, shot by shot. First create a built-in ImageGen portrait with Bran and Night King together, both readable in the same frame, matching the approved pixel stills. This meeting is dialogue coverage; no Jon, combat or origin montage. Show the new still and proposed exact dialogue before its video generation. A ten-second duration is the current project direction, not a universal rule for other films. Do not claim reduced shot complexity guarantees texture preservation; evaluate the next result.
