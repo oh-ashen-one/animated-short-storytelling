@@ -4,6 +4,10 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-09-13 — PS2 leads; next dialogue reference
+Director says PS2 is best so far after the five-second comparisons, and requests the next scene reference. Continue in the PS2 low-poly lane using the original PS2 two-character still as the visual anchor. Generated one built-in ImageGen over-Night-King-shoulder view of seated Bran for the next conversation beat. Same fur, wheelchair, weirwood and moonlit courtyard; no new cast. This new still is pending director review; no video generated for it. PS2 is the leading selected direction, not proof that every future take will preserve identity. Next dialogue remains to be approved.
+
+
 ## 2026-09-13 — Pixel dialogue rejected; alternative style exploration
 Director judged the ten-second Bran/Night King pixel conversation unsatisfactory and requested alternative animation-style images. Produced three built-in ImageGen portrait stills of the same two-character meeting for comparison: early-2000s PS2 low-poly 3D, hand-drawn fantasy cel animation, gothic stop-motion puppets. These are still-image proposals only: no alternative-style video generated, no new style approved, and no claim of proven motion fidelity. Keep the current dialogue and scene available while the director selects the next visual direction. Do not assume pixel style remains locked after this feedback.
 
