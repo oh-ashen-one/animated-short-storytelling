@@ -1,0 +1,3 @@
+# Five-second style comparison
+
+2026-09-13. Director explicitly requested one five-second video each from the first (PS2) and second (hand-drawn cel) alternative images. Generated both through fal H3 Max I2V at 768P with balanced expansion. Original short dialogue used to fit: Bran, 0–2.5s: "I know what they did to you." Night King, 2.5–5s: "Then you know why I've come." Single locked two-person shot requested, matching each approved style still. Both jobs completed, director verdict pending. No retries. Cost unverified. Clay remains the last selected style; these comparisons do not supersede it without feedback.
