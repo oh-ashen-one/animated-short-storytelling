@@ -4,6 +4,19 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-09-13 — GoT pixel film: prompt and feedback failures
+Model: fal MiniMax H3 Max I2V/R2V, 768P. Exact billed cost not verified; do not infer spend from historical pricing.
+
+- **BAD — opening style:** illustrated storyboard-guided take lacked the director's requested pixelation. Dedicated built-in ImageGen pixel still then I2V improved fidelity. Director's second opening verdict: "I guess not bad." Character smoothing and added soft light remained; this is tentative acceptance, not perfect fidelity.
+- **BAD — Bran ten-second take:** prompt explicitly requested breathing, stillness and leaves, "no dialogue" and "No chest wound insert." It removed the story's reveal and warning. Director rejected the inactivity and absence of speech. Increasing duration without adding narrative was the failure, not evidence that the model cannot tell the story.
+- **Correction:** full timed sequence with origin flashback, visible shard/weakness, Bran's warning to Jon and clear speaker-specific audio. The fifteen-second replacement is a DRAFT, not generated or approved yet; see prompts/bran-night-king-15s.md.
+- **Prompt standard:** director supplied a detailed adventure-game example with style, cast, geography, timed staging, camera, emotion, sound and exclusions. Adopt its level of specificity, not its unrelated 3D style or 16:9 format. Our film remains pixelated 9:16.
+- **Settings truthfulness:** previous jobs used balanced expansion. Director's example reports disabled; verify current support before promising or using it. Store actual submitted and returned expanded prompts separately.
+- **Remote source of truth:** the repo already required ongoing updates, but feedback was left in chat. Update actionable lessons after verdicts/corrections and before another generation, reconcile conflicting rules, and push. No promise of autonomous background execution.
+- **Approvals:** each still, clip and retry needs its own approval. A script outline is insufficient when the director expects to review the complete submission prompt.
+
+
+
 ## 2026-09-02 — REFERENCE LOCK: @lucamaxiim study (steal vs never)
 
 ### Entry 43 — Variety shorts: steal ingredients, never clone; fal H3 Max 768P price correction — no spend
