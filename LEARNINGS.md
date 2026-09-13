@@ -4,6 +4,10 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-09-13 — Restart opener, fifteen seconds
+Director authorized one new scene-one sequence: approach, Jon breaking through, Bran saying "You came", sword interception. Submitted full prompt is in prompts/got-restart-scene-01-15s.md. H3 Max I2V, 768P, balanced expansion; approved pixel wide opening still. Delivered fifteen-second MP4. Cost unverified; director verdict pending. Late-frame inspection shows crossed blades but smoother character rendering than the pixel environment, plus Jon appearance drift. Do not mark pixel preservation or new Jon identity as approved. Prior fifteen-second Bran vision draft is superseded by the restart and was never generated.
+
+
 ## 2026-09-13 — GoT pixel film: prompt and feedback failures
 Model: fal MiniMax H3 Max I2V/R2V, 768P. Exact billed cost not verified; do not infer spend from historical pricing.
 
