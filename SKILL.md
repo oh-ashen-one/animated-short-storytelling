@@ -12,6 +12,20 @@ description: |
 
 A production workflow for making coherent animated shorts from text-to-video models. Built from real productions; every hard-won lesson is in `LEARNINGS.md` — read it before spending money.
 
+## Current director workflow — 2026-09-13
+This section governs current animated-film work where older project-specific examples conflict.
+
+- **GitHub is the source of truth:** `oh-ashen-one/animated-short-storytelling`. Read the current remote SKILL.md and relevant LEARNINGS.md at session start. Record actionable feedback during active work, after a verdict or correction and before the next generation; do a final session sweep. Fold changed decisions into this skill, commit/push and report verified success. If blocked, state that the remote remains unsynced. This is an event-driven workflow, not a promise of unattended background updates.
+- **Each generation needs director approval**, including stills, videos and retries. Approval for one does not approve subsequent generations. Preserve an already given approval; do not ask twice for the identical action.
+- Show the **complete proposed submission prompt**, approved input still and actual settings before a video request. A short script outline is not the final prompt. Preserve locked dialogue exactly. Record the submitted prompt and any returned expanded prompt separately; never call an unsubmitted draft a used prompt.
+- Use a structured production prompt: visual style; character continuity; geography and setting; timed shots with meaningful action, exact speaker lines and camera; audio and performance; emotional arc; exclusions. Detail must resolve staging, not pad adjectives. See [the Bran example](prompts/bran-night-king-15s.md).
+- Runtime increases require additional story, dialogue or meaningful performance. Do not stretch a brief beat into ten or fifteen seconds of breathing and leaves. This film needs audible dialogue and an actual weakness reveal.
+- Multiple timed shots are allowed when the director approves a sequence. Apply one dominant camera move per shot. Do not append blanket "no cuts" when the approved script requires cuts. Single-take rules remain appropriate for genuine singles.
+- Stills: use built-in ImageGen. For this GoT film, preserve obvious square pixel clusters, dithering, stepped edges and cobalt/ivory/black/crimson palette. Portrait 9:16. Use a dedicated approved still as I2V first frame; a whole storyboard is not a first frame.
+- Video: fal H3 Max, 768P only. Lock duration explicitly. Verify endpoint capabilities and settings against current docs without a paid probe. `balanced` was used on the failed Bran job. The director's supplied example uses `disabled`; verify support before promising it, and disclose any required alternative before submitting. Do not claim exact prompt preservation when expansion is on.
+- Keep observations separate from verdicts: pixel I2V opening was tentatively accepted; it still softened the character and added light rays. Do not label that a solved pixel-preservation method.
+- No API keys, credentials, private media URLs or personal paths in this repository.
+
 ## Golden rules
 
 1. **Never generate without explicit director confirmation.** Quote the cost first, wait for a green light. (Director rule, 2026-08-19.) Style/vibe tests are ALWAYS the minimum duration — 4s on the direct API — never longer.
@@ -25,7 +39,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 9. **Episodes must be creatively distinct.** Not just a new script — a new TOPIC, world, cast, and emotional register. Ep1 and Ep2 were both "addictive algorithms" with the same kid, same locations, same melancholy; the director's verdict: "way too similar — we have the entire world of creativity." Recurring style/character lore is a seasoning, not the meal. When pitching episode ideas, explicitly check the pitch against every previous episode's topic and theme; anything in the same thematic neighborhood gets reworked or cut. (Director rule, 2026-08-19.)
 10. **Exploit the medium — go mythical/surreal when the shot allows it.** We are not bound to documentary realism: if a shot (especially a closer) can carry an impossible image — data-fireflies rising off wet lawns, a sky-whale, frozen glass water — prefer it over a "normal human thing." One mythic element per shot, anchored in the scene's reality, never a random fantasy pile-on. Put it FIRST and BIG in the prompt — as one clause in a long prompt H3 sheds it and it never renders. And keep it SUBTLE on screen (director on the sky-whale take: "more subtle next time"). (Director rule, 2026-08-19.)
 11. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
-12. **fal.ai MiniMax H3 Max only, 768P only.** All video generation is fal's post-trained H3 Max (`minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`) at **768P**. There is no 720p on Max (native is 480P or 768P; lock 768P). Never official MiniMax (`api.minimax.io`), never FAL base H3 (`minimax/h3/*`), never Higgsfield, never 2K/4K/480P, never H3-Regenerate-2K. Identity stills = image-to-video first frame (Max has no reference-to-video yet). Pricing confirmed 2026-09-12: promo through 2026-09-14 at **$0.02/sec @ 768P**; from 2026-09-15 the listed rate is **$0.08/sec**. Verify the live fal model page before every quote. Never generate 480P. Key is env `FAL_KEY`. Never commit it.
+12. **fal.ai MiniMax H3 Max only, 768P only.** All video generation is fal's post-trained H3 Max (`minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`) at **768P**. There is no 720p on Max (native is 480P or 768P; lock 768P). Never official MiniMax (`api.minimax.io`), never FAL base H3 (`minimax/h3/*`), never Higgsfield, never 2K/4K/480P, never H3-Regenerate-2K. Identity stills = image-to-video first frame (reference-to-video now exists; verify its current schema). Pricing confirmed 2026-09-12: promo through 2026-09-14 at **$0.02/sec @ 768P**; from 2026-09-15 the listed rate is **$0.08/sec**. Verify the live fal model page before every quote. Never generate 480P. Key is env `FAL_KEY`. Never commit it.
 
 13. **Grok Imagine is a second pipeline, never mixed with H3.** Contest films and grok.com Imagine shorts do not go through fal/MiniMax. H3 clips DQed for the Odyssey contest. Imagine stills/video/voices only. CapCut stitch is legal. Suno is score only. No celebrity likeness on Imagine contest work (overrides golden rule 5).
 
@@ -76,7 +90,7 @@ For each shot, write: number, timecode, story beat, one-sentence action, camera 
 - **Pass prompts from files, not inline** — `--prompt "$(cat .prompt-NN.txt)"`. Apostrophes/em-dashes in inline prompts can break the shell mid-batch (the job survives; your wait loop doesn't).
 - **Screen-within-screen works on H3** (verified 3/3 first-take in Ep2): write the screen's content explicitly ("the phone screen clearly shows three spinning slot machine reels") and keep the camera to one slow move.
 - Failed jobs may show a partial charge followed by a refund minutes later — tally net from the ledger at close, never mid-run balances.
-- Regenerate weak shots immediately — that's what the buffer is for. Don't "fix it in the edit."
+- Show weak takes and propose a specific correction; obtain approval for each retry before generating.
 - **Judge on early AND late frames.** A time-locked action ("the patterns light up") may only complete in the final second — a mid-clip frame can look like a failed take and trick you into an unneeded retake. (Ep4 shot 7: one brain-scan pattern at 2.5s, both matching by 4.5s.)
 - **Artifact tolerance:** a short (~2s), non-narrative-breaking artifact on an otherwise strong take is keepable. Cap retakes per shot (3 max), keep the best, flag it, and offer the director one priced retake after they watch the file — don't burn budget chasing perfection unprompted.
 - Download and keep every keeper with a strict naming scheme: `shot-01.mp4`, `shot-02.mp4`, ...
@@ -131,7 +145,7 @@ A second tested genre besides the retro-game VO films. 9:16 talking-head / A-rol
 
 **Spoken numbers as full words.** H3 reads "262k" as "two sixty two" and "512" as digit groups. Write "two hundred sixty two thousand" and "five hundred twelve gigabyte" inside `<d>[English] ...</d>`. Never dump a pile of numerals.
 
-**Identity:** director-supplied stills as H3 Max **image-to-video first frame** (`image_url`). Max has no multi-image reference-to-video. Describe wardrobe/hair/glasses AND attach the still. CAST LOCK: EXACTLY ONE PERSON, no extras, no clones, adult scale. Jim Halpert is NOT locked from episode screenshots — do not reshoot Jim-led until better stills.
+**Identity:** director-supplied stills as H3 Max **image-to-video first frame** (`image_url`). Max also has reference-to-video; verify its current schema. Describe wardrobe/hair/glasses AND attach the still. CAST LOCK: EXACTLY ONE PERSON, no extras, no clones, adult scale. Jim Halpert is NOT locked from episode screenshots — do not reshoot Jim-led until better stills.
 
 **Confirm before generate:** spoken-line script + every ref image + cost (~$0.40 per 10s until 2026-09-01, then $0.80). Do not paraphrase locked lines. When Jim was recast as Michael, Michael says Jim's lines word for word.
 
@@ -173,7 +187,7 @@ Ashen studied Instagram @lucamaxiim as a reference. We are **not** cloning him. 
 - Endpoints: `minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`
 - HTTP: `POST https://fal.run/<endpoint>` with `Authorization: Key $FAL_KEY`
 - Resolution: set `768P` explicitly. Never 480P, 720p, 2K, 4K, or H3-Regenerate-2K.
-- Identity: H3 Max has no multi-image reference-to-video. Use an approved opening still as `image_url`; optional `end_image_url` may lock the ending.
+- Identity: H3 Max also has reference-to-video; verify its current schema. Use an approved opening still as `image_url`; optional `end_image_url` may lock the ending.
 - Aspect: default `9:16` for shorts; use `16:9` only when the director locks cinematic delivery.
 - Duration: 5–15 seconds for normal production. Use the minimum reliable duration for tests.
 - Prompt expansion: `balanced` by default; `disabled` when the director supplies a full beat sheet that must remain literal.
@@ -207,9 +221,9 @@ Distilled from the best public work: jnMetaCode/ai-shortfilm-prompts, OSideMedia
 ### Prompt anatomy (H3-native)
 
 Per-shot prompt = **shot size + composition → subject (locked description) → ONE action beat in sequential verbs (setup → action → landing) → ONE camera move in its own sentence → named physical light source + locked palette block → style suffix → "One continuous take, no cuts." + "No score. Production audio only."**
-- H3 cuts between shots by default — "one continuous take, no cuts" is mandatory.
+- Use "one continuous take, no cuts" only for an approved single-shot prompt; omit it for approved multi-shot sequences.
 - H3 does NOT support the legacy Hailuo `[bracket]` camera commands — natural-language camera direction only.
-- ~150–200 words per prompt is the sweet spot; walls of adjectives dilute.
+- Keep prompts concrete. A multi-shot sequence needs the full timed staging, dialogue and continuity specification; do not truncate it to a single-shot word target.
 
 ### Camera discipline
 
