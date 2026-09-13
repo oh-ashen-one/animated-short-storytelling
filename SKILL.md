@@ -25,7 +25,7 @@ A production workflow for making coherent animated shorts from text-to-video mod
 9. **Episodes must be creatively distinct.** Not just a new script — a new TOPIC, world, cast, and emotional register. Ep1 and Ep2 were both "addictive algorithms" with the same kid, same locations, same melancholy; the director's verdict: "way too similar — we have the entire world of creativity." Recurring style/character lore is a seasoning, not the meal. When pitching episode ideas, explicitly check the pitch against every previous episode's topic and theme; anything in the same thematic neighborhood gets reworked or cut. (Director rule, 2026-08-19.)
 10. **Exploit the medium — go mythical/surreal when the shot allows it.** We are not bound to documentary realism: if a shot (especially a closer) can carry an impossible image — data-fireflies rising off wet lawns, a sky-whale, frozen glass water — prefer it over a "normal human thing." One mythic element per shot, anchored in the scene's reality, never a random fantasy pile-on. Put it FIRST and BIG in the prompt — as one clause in a long prompt H3 sheds it and it never renders. And keep it SUBTLE on screen (director on the sky-whale take: "more subtle next time"). (Director rule, 2026-08-19.)
 11. **Log everything.** Model, prompt, duration, cost, verdict (good/bad + why). That log is what makes the next film cheaper and better.
-12. **fal.ai MiniMax H3 Max only, 768P only.** All video generation is fal's post-trained H3 Max (`minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`) at **768P**. There is no 720p on Max (native is 480P or 768P; lock 768P). Never official MiniMax (`api.minimax.io`), never FAL base H3 (`minimax/h3/*`), never Higgsfield, never 2K/4K/480P, never H3-Regenerate-2K. Identity stills = image-to-video first frame (Max has no reference-to-video yet). Live fal docs as of 2026-09-01: **$0.02/sec at 768P**, $0.0125/sec at 480P. Never generate 480P unless asked. Key is env `FAL_KEY`. Never commit it.
+12. **fal.ai MiniMax H3 Max only, 768P only.** All video generation is fal's post-trained H3 Max (`minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`) at **768P**. There is no 720p on Max (native is 480P or 768P; lock 768P). Never official MiniMax (`api.minimax.io`), never FAL base H3 (`minimax/h3/*`), never Higgsfield, never 2K/4K/480P, never H3-Regenerate-2K. Identity stills = image-to-video first frame (Max has no reference-to-video yet). Pricing confirmed 2026-09-12: promo through 2026-09-14 at **$0.02/sec @ 768P**; from 2026-09-15 the listed rate is **$0.08/sec**. Verify the live fal model page before every quote. Never generate 480P. Key is env `FAL_KEY`. Never commit it.
 
 13. **Grok Imagine is a second pipeline, never mixed with H3.** Contest films and grok.com Imagine shorts do not go through fal/MiniMax. H3 clips DQed for the Odyssey contest. Imagine stills/video/voices only. CapCut stitch is legal. Suno is score only. No celebrity likeness on Imagine contest work (overrides golden rule 5).
 
@@ -166,19 +166,20 @@ Ashen studied Instagram @lucamaxiim as a reference. We are **not** cloning him. 
 **OURS**
 - Last beat always points at the Skool community via Instagram bio. Rotate: "Learn how we make these videos" / "Learn how to use AI" / "Learn how to make not AI slop" / "Learn how to use AI to make actually good stuff" then "Link in bio."
 
-## Model reference — MiniMax direct API (ALL video gen, 768P standard)
+## Model reference — fal.ai MiniMax H3 Max (ALL video gen, 768P only)
 
-**House rule (director, 2026-08-29): every video generation is fal.ai MiniMax H3 Max at 768P.** Endpoints `minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`. No official MiniMax. No FAL base H3. No Higgsfield. No 2K/4K/480P. No 720p (Max does not offer it). Identity stills are image-to-video first frames. Live fal docs as of 2026-09-01: **$0.02/sec at 768P**, $0.0125/sec at 480P. Never generate 480P unless asked. Key is env `FAL_KEY`. Never commit it. A 5s 768p clip renders in under 3 seconds on Max.
+**House rule (updated 2026-09-13): every video generation is fal.ai MiniMax H3 Max at 768P.**
 
-Wrapper: `~/shorts-factory/h3.sh` (submit → poll → download, bash + curl + python3):
-
-- `h3.sh gen --prompt-file .prompt-01.txt --out shot-01.mp4 --duration 5 --ratio 9:16 --ref <sheet>` — resolution is locked to 768P.
-- `--ref` / `--first-frame` / `--last-frame` accept a local path (auto-uploaded), an `mm_file://<file_id>`, or an https URL. Character sheets go in as `role=reference_image`.
-- `h3.sh upload <file>` → prints a `file_id` (uploads valid 7 days, image sides 256–5760px). Reference as `mm_file://<file_id>`.
-- `h3.sh status <task_id>`; `gen --async` submits and returns the task_id without waiting (for wave-of-4 batching).
-- Raw endpoints: `POST /v2/video_generation` (multimodal `content[]` array — H3 rejects the v1 endpoint), `GET /v2/query/video_generation/<task_id>` (success → `task.content.url` is the download link directly), `POST /v1/files/upload` with `purpose=video_generation_input`.
-- Duration 4–15s int, resolution 768P only. Ratio: required for text-to-video; with image inputs the API DEFAULTS to adapting to the ref's aspect — always send the delivery ratio explicitly (a landscape sheet + `ratio: 9:16` returns 1440×2560, verified). Omit only with first/last-frame keyframes. 4s works fine on the direct API (unlike Higgsfield's 4s failures).
-- Task list endpoint covers the last 7 days (`task_type=generation`) — that's the Phase 8 prompt-recovery path for direct-API films.
+- Endpoints: `minimax/h3-max/text-to-video` and `minimax/h3-max/image-to-video`
+- HTTP: `POST https://fal.run/<endpoint>` with `Authorization: Key $FAL_KEY`
+- Resolution: set `768P` explicitly. Never 480P, 720p, 2K, 4K, or H3-Regenerate-2K.
+- Identity: H3 Max has no multi-image reference-to-video. Use an approved opening still as `image_url`; optional `end_image_url` may lock the ending.
+- Aspect: default `9:16` for shorts; use `16:9` only when the director locks cinematic delivery.
+- Duration: 5–15 seconds for normal production. Use the minimum reliable duration for tests.
+- Prompt expansion: `balanced` by default; `disabled` when the director supplies a full beat sheet that must remain literal.
+- Pricing confirmed 2026-09-12: promo through 2026-09-14 at **$0.02/sec @ 768P**; from 2026-09-15 the listed rate is **$0.08/sec**. Verify live pricing before every cost quote.
+- Auth: read only from env `FAL_KEY`. Never print, log, commit, or paste the key into prompts.
+- Delivery: download the MP4 immediately, ffprobe the first clip in each batch, remux a `+faststart` chat copy, and send it without waiting to be asked.
 
 ## Model reference — Higgsfield CLI
 
@@ -285,6 +286,18 @@ A **separate camera** from H3. Do not generate Imagine shots on fal. Do not gene
 3. Scylla wide — necks, one empty bench, no melee.
 
 Then later: Calypso → beggar door → Argos (10s) → olive bed (home costume) → hold.
+
+## September 8–13 production update
+
+- Strip celebrity and franchise names from API prompts; describe visible materials, anatomy, wardrobe, lighting, and camera language.
+- For a director-supplied timed beat sheet, use `prompt_expansion_mode: disabled`; use `balanced` for normal prompt enhancement.
+- Keep recent style lanes distinct: stylized battle-royale hero 3D, photoreal cinematic 3D VFX, late-1990s PS1 low-poly, and the separate 1970s gothic Odyssey lane.
+- Exact logos require a real logo composited into the still. Do not trust an image model to redraw brand geometry.
+- A fully dust-covered opening frame has low logo-reveal reliability. Prefer a mid-wipe or mostly revealed opening still, or lock the exact end frame.
+- Use a full-body approved still as `image_url` for character image-to-video.
+- Remux a `+faststart` copy for chat delivery and track whether the actual MP4 was sent.
+- For obscure meme essays: use a new fake institution, intentionally varied VO, mismatched picture and essay, 2–4 word captions, bait → punch → Skool CTA via Instagram bio.
+- See `SESSION-NOTES-2026-09.md` for the dated source and recent clip references.
 
 ## Evolving this skill
 
