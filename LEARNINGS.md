@@ -4,6 +4,11 @@ Every entry: date, model, cost, verdict (GOOD/BAD/MIXED), and the lesson. Newest
 
 ---
 
+## 2026-09-13 — Director rejects restart; ten-second dialogue coverage
+**BAD:** director rejected the fifteen-second opener for loss of pixel style and incorrect Jon appearance. Text-only casting of a newly introduced character did not preserve identity. Do not reuse this take as a character anchor.
+**New direction:** ten seconds at a time, shot by shot. First create a built-in ImageGen portrait with Bran and Night King together, both readable in the same frame, matching the approved pixel stills. This meeting is dialogue coverage; no Jon, combat or origin montage. Show the new still and proposed exact dialogue before its video generation. A ten-second duration is the current project direction, not a universal rule for other films. Do not claim reduced shot complexity guarantees texture preservation; evaluate the next result.
+
+
 ## 2026-09-13 — Restart opener, fifteen seconds
 Director authorized one new scene-one sequence: approach, Jon breaking through, Bran saying "You came", sword interception. Submitted full prompt is in prompts/got-restart-scene-01-15s.md. H3 Max I2V, 768P, balanced expansion; approved pixel wide opening still. Delivered fifteen-second MP4. Cost unverified; director verdict pending. Late-frame inspection shows crossed blades but smoother character rendering than the pixel environment, plus Jon appearance drift. Do not mark pixel preservation or new Jon identity as approved. Prior fifteen-second Bran vision draft is superseded by the restart and was never generated.
 
